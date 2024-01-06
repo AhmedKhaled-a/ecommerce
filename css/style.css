@@ -1,0 +1,285 @@
+/* 
+---------------------------------------------
+global styles
+--------------------------------------------- 
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    margin-left: 20px; margin-right: 20px;
+}
+
+.btn {
+    padding: 15px;
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 
+---------------------------------------------
+Start Hero Section or the first section
+--------------------------------------------- 
+*/
+
+#hero {
+    height: 55vh;
+    background: rgba(1, 16, 26, 0.486) url('../imgs/home-new-bg-free-img.jpg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+
+#hero,
+#hero .container .main-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hero .container .main-txt {
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#hero .container .main-txt h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#hero .container .main-txt h4 {
+    margin: 15px 0px; 
+    font-size: 1.4rem;
+}
+
+#hero .container .main-txt div {
+    margin: 15px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+#hero .container .main-txt a:last-of-type {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid  #FFF;
+    color: #fff;
+}
+
+#hero .container .main-txt a:last-of-type:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+/* 
+---------------------------------------------
+Start Cards Section 
+--------------------------------------------- 
+*/
+#cards .container {padding: 80px 0px}
+#cards .container .card:first-of-type,
+#cards .container .card:last-of-type {
+    background: rgba(0, 0, 0, 0.5) url('../imgs/men-fashion-card.jpg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+
+#cards .container .card:nth-child(2) {
+    background: rgba(0, 0, 0, 0.5) url('../imgs/footwear-card.jpg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+}
+
+#cards .container .card {
+    padding: 120px 20px 35px 20px;
+    margin-top: 20px;
+    color: #FFF;
+}
+
+#cards .container .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+#cards .container .card p {
+    margin-bottom: 20px;
+    line-height: 2;
+}
+/* End Cards Section */
+
+
+
+@media (min-width:567px) {
+    
+}
+
+/* 
+---------------------------------------------
+Meduim Devices
+--------------------------------------------- 
+*/
+@media (min-width:768px) {
+    .container {
+        width: 720px;
+        margin-left: auto; margin-right: auto;
+    }
+
+    /* 
+    ---------------------------------------------
+    Start Hero Section
+    --------------------------------------------- 
+    */
+    #hero .container .main-txt {
+        width: 80%;
+        align-items: flex-start;
+        text-align: left;
+        padding-left: 25px;
+    }
+
+    #hero .container .main-txt h1 {
+        font-size: 3.125rem;
+        width: 70%;
+    }
+
+    .btn {
+        width: 30%;
+    }
+    
+    #hero .container .main-txt a:last-of-type {margin-top: 0; margin-left: 20px;}
+
+    #hero .container .main-txt div {justify-content: flex-start;}
+
+    /* 
+    ---------------------------------------------
+    Start Cards Section 
+    --------------------------------------------- 
+    */
+    #cards .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+    #cards .container .card {
+        padding-top: 220px;
+        padding-bottom: 20px;
+        min-height: 480px;
+    }
+
+    #cards .container .card:last-of-type,
+    #cards .container .card:first-of-type {
+        background-position: center left;
+    }
+    #cards .container .card:nth-child(2) {background-position: center right;}
+    #cards .container .card h3 {
+        font-size: 1.4rem;
+        font-weight: bolder;
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+    #cards .container .card p {
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    #cards .container .card .btn {width: 75%;}
+}
+
+/* 
+---------------------------------------------
+Large Devices
+--------------------------------------------- 
+*/
+@media (min-width:992px) {
+    .container {
+        width: 930px;
+    }
+
+    /* 
+    ---------------------------------------------
+    Start Hero Section
+    --------------------------------------------- 
+    */
+    #hero .container .main-txt h1{
+        width: 70%;
+        font-size: 4rem;
+    }
+
+    .btn {
+        width: 20%;
+    }
+
+    /* 
+    ---------------------------------------------
+    Start Cards Section 
+    --------------------------------------------- 
+    */
+    #cards .container {gap: 20px;}
+    #cards .container .card {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* 
+---------------------------------------------
+Extra Large Devices
+--------------------------------------------- 
+*/
+@media (min-width:1200px) {
+    .container {
+        width: 1140px;
+    }
+
+    /* 
+    ---------------------------------------------
+    Start Hero Section
+    --------------------------------------------- 
+    */
+    #hero {
+        height: 88vh;
+        background-attachment: fixed;
+    }
+    #hero .container .main-txt {padding-left: 0px;}
+    #hero .container .main-txt h1 {font-size: 4.4rem;}
+    #hero .container .main-txt .btn {width: 16%;}
+    #hero .container .main-txt h4 {margin: 25px 0px;}
+
+    /* 
+    ---------------------------------------------
+    Start Cards Section 
+    --------------------------------------------- 
+    */
+    #cards .container .card {
+        padding-left: 40px;
+        padding-right: 20px;
+        /* min-height: 420px; */
+    }
+    #cards .container .card h3 {
+        font-size: 1.6rem;
+    }
+    #cards .container .card .btn {width: 50%;}
+
+}
