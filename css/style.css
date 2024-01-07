@@ -98,6 +98,18 @@ Hero Section
     font-size: 1.4rem;
 }
 
+#hero .container .main-txt h1,
+#hero .container .main-txt h4 {
+    animation-name: fade;
+    animation-duration: 3.3s;
+}
+
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 #hero .container .main-txt div {
     margin: 15px 0px;
     width: 100%;
