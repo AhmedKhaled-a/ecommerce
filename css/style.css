@@ -4,6 +4,11 @@ global styles
 --------------------------------------------- 
 */
 
+:root {
+    --sec-bg-color: #f5f7f9;
+    --overlay-color: rgba(1, 16, 26, 0.486);
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -47,7 +52,7 @@ Start Hero Section or the first section
 
 #hero {
     height: 55vh;
-    background: rgba(1, 16, 26, 0.486) url('../imgs/home-new-bg-free-img.jpg') no-repeat center center/cover;
+    background: var(--overlay-color) url('../imgs/home-new-bg-free-img.jpg') no-repeat center center/cover;
     background-blend-mode: overlay;
 }
 
@@ -128,9 +133,126 @@ Start Cards Section
     margin-bottom: 20px;
     line-height: 2;
 }
-/* End Cards Section */
 
 
+/* 
+---------------------------------------------
+Start Featured Products Section 
+--------------------------------------------- 
+*/
+#featured {
+    background-color: var(--sec-bg-color);
+    text-align: center;
+    padding: 40px 0px;
+}
+
+#featured .container h2:first-child {
+    text-transform: capitalize;
+    margin-bottom: 28px;
+}
+
+#featured .container .line {
+    width: 30%;
+    height: 2px;
+    margin: 0px auto;
+    background-color: #0084d6;
+}
+
+#featured .container .products {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: start;
+}
+
+#featured .container .products .product {
+    width: 47%;
+    margin-bottom: 50px;
+}
+
+#featured .container .products .product img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+#featured .container .products .product h2 {font-size: .9rem;}
+
+#featured .container .products .product .catg {
+    font-size: .75rem;
+    color: #abacad;
+    margin: 10px 0px;
+    text-transform: capitalize;
+}
+
+#featured .container .products .product .price {font-size: .95rem;}
+
+/* 
+---------------------------------------------
+Start Special Section 
+--------------------------------------------- 
+*/
+#special {padding-bottom: 100px; background-color: var(--sec-bg-color);}
+#special .container {
+    background: var(--overlay-color) url('../imgs/special-bg.jpg') no-repeat center center/cover;
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 55px 20px;
+    color: #FFF;
+}
+
+#special .container h4:first-of-type {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#special .container h2 {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+
+#special .container p {
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#special .container h4:last-of-type {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 1.2rem;
+}
+
+/* 
+---------------------------------------------
+Start Tags Section 
+--------------------------------------------- 
+*/
+#tags {
+    background-color: var(--sec-bg-color);
+    border-bottom: 1px solid #CCC;
+}
+
+#tags .container .tag-box {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#tags .container .tag-box img {max-width: 15%;}
+
+#tags .container .tag-box h5 {font-size: 1.1rem;}
+
+#tags .container .tag-box p {
+    line-height: 1.8;
+    color: #000000d2;
+}
+#tags .container .tag-box img,
+#tags .container .tag-box h5,
+#tags .container .tag-box p {margin-bottom: 20px;}
 
 @media (min-width:567px) {
     
@@ -149,7 +271,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    Start Hero Section
+    (Meduim) Start Hero Section
     --------------------------------------------- 
     */
     #hero .container .main-txt {
@@ -174,7 +296,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    Start Cards Section 
+    (Meduim) Start Cards Section 
     --------------------------------------------- 
     */
     #cards .container {
@@ -205,6 +327,45 @@ Meduim Devices
         line-height: 1.5;
     }
     #cards .container .card .btn {width: 75%;}
+
+    /* 
+    ---------------------------------------------
+    (Meduim) Start Featured Products Section 
+    --------------------------------------------- 
+    */
+    #featured {padding-top: 100px;}
+    #featured .container .line {width: 15%;}
+    #featured .container .products {padding: 0px 40px;}
+    #featured .container .products .product {width: calc((100% / 3) - 10px);}
+    #featured .container .products .product img {max-width: 95%;}
+
+    /* 
+    ---------------------------------------------
+    (Meduim) Start Special Section 
+    --------------------------------------------- 
+    */
+    #special .container {
+        align-items: flex-start;
+        padding: 60px 50px;
+    }
+    #special .container p, #special .container h4:last-of-type {text-align: start; width: 67%;}
+    #special .container .btn {width: 25%;}
+
+    /* 
+    ---------------------------------------------
+    (Meduim) Start Tags Section 
+    --------------------------------------------- 
+    */
+    #tags .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0px 40px;
+    }
+
+    #tags .container .tag-box {width: calc((100% / 2) - 50px);}
+
 }
 
 /* 
@@ -219,7 +380,7 @@ Large Devices
 
     /* 
     ---------------------------------------------
-    Start Hero Section
+    (Large) Start Hero Section
     --------------------------------------------- 
     */
     #hero .container .main-txt h1{
@@ -233,7 +394,7 @@ Large Devices
 
     /* 
     ---------------------------------------------
-    Start Cards Section 
+    (Large) Start Cards Section 
     --------------------------------------------- 
     */
     #cards .container {gap: 20px;}
@@ -241,6 +402,30 @@ Large Devices
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    /* 
+    ---------------------------------------------
+    (Large) Start Featured Products Section 
+    --------------------------------------------- 
+    */
+    #featured .container h2:first-of-type{font-size: 2.7rem;}
+    #featured .container .line {width: 10%;}
+    #featured .container .products .product {width: calc((100% / 5) - 10px);}
+
+    /* 
+    ---------------------------------------------
+    (Large) Start Special Section 
+    --------------------------------------------- 
+    */
+    #special .container .btn {width: 18%;}
+
+    /* 
+    ---------------------------------------------
+    (Large) Start Tags Section 
+    --------------------------------------------- 
+    */
+    #tags .container {padding: 0px 20px;}
+    #tags .container .tag-box {width: calc((100% / 2) - 80px);}
 }
 
 /* 
@@ -255,7 +440,7 @@ Extra Large Devices
 
     /* 
     ---------------------------------------------
-    Start Hero Section
+    (Extra) Start Hero Section
     --------------------------------------------- 
     */
     #hero {
@@ -269,17 +454,38 @@ Extra Large Devices
 
     /* 
     ---------------------------------------------
-    Start Cards Section 
+    (Extra) Start Cards Section 
     --------------------------------------------- 
     */
     #cards .container .card {
         padding-left: 40px;
         padding-right: 20px;
-        /* min-height: 420px; */
     }
     #cards .container .card h3 {
         font-size: 1.6rem;
     }
     #cards .container .card .btn {width: 50%;}
 
+    /* 
+    ---------------------------------------------
+    (Extra) Start Featured Products Section 
+    --------------------------------------------- 
+    */
+    #featured .container .products {padding: 0px 0px;}
+    #featured .container .products .product img {max-width: 100%;}
+    #featured .container .products .product {width: calc((100% / 5) - 15px);}
+
+    /* 
+    ---------------------------------------------
+    (Extra) Start Special Section 
+    --------------------------------------------- 
+    */
+    #special .container {padding: 100px 90px; background-attachment: fixed;}
+
+    /* 
+    ---------------------------------------------
+    (Large) Start Tags Section 
+    --------------------------------------------- 
+    */
+    #tags .container .tag-box {width: calc((100% / 4) - 30px);}
 }
