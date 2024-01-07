@@ -1,5 +1,22 @@
 /* 
 ---------------------------------------------
+Table of contents
+---------------------------------------------
+01. global styles
+02. Hero Section
+03. Cards Section 
+04. Featured Products Section 
+05. Special Section 
+06. Tags Section 
+07. Sale Section
+08. Footer
+09. Links
+--------------------------------------------- 
+*/
+
+
+/* 
+---------------------------------------------
 global styles
 --------------------------------------------- 
 */
@@ -7,6 +24,7 @@ global styles
 :root {
     --sec-bg-color: #f5f7f9;
     --overlay-color: rgba(1, 16, 26, 0.486);
+    --main-trans-time: 0.3s;
 }
 
 * {
@@ -36,7 +54,7 @@ html {
     text-transform: uppercase;
     font-size: .9rem;
     font-weight: bold;
-    transition: 0.3s;
+    transition: var(--main-trans-time);
 }
 
 .btn:hover {
@@ -46,7 +64,7 @@ html {
 
 /* 
 ---------------------------------------------
-Start Hero Section or the first section
+Hero Section
 --------------------------------------------- 
 */
 
@@ -103,7 +121,7 @@ Start Hero Section or the first section
 
 /* 
 ---------------------------------------------
-Start Cards Section 
+Cards Section 
 --------------------------------------------- 
 */
 #cards .container {padding: 80px 0px}
@@ -137,7 +155,7 @@ Start Cards Section
 
 /* 
 ---------------------------------------------
-Start Featured Products Section 
+Featured Products Section 
 --------------------------------------------- 
 */
 #featured {
@@ -170,6 +188,7 @@ Start Featured Products Section
 #featured .container .products .product {
     width: 47%;
     margin-bottom: 50px;
+    position: relative;
 }
 
 #featured .container .products .product img {
@@ -177,10 +196,27 @@ Start Featured Products Section
     margin-bottom: 10px;
 }
 
+#featured .container .products .product:hover::after {
+    font-family: 'FontAwesome';
+    content: '\f290';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 17px;
+    right: 18px;
+    border-radius: 50%;
+    background-color: #FFF;
+    box-shadow: 0px 1px 3px 0px;
+    cursor: pointer;
+}
+
 #featured .container .products .product h2 {font-size: .9rem;}
 
 #featured .container .products .product .catg {
-    font-size: .75rem;
+    font-size: .9rem;
     color: #abacad;
     margin: 10px 0px;
     text-transform: capitalize;
@@ -190,7 +226,7 @@ Start Featured Products Section
 
 /* 
 ---------------------------------------------
-Start Special Section 
+Special Section 
 --------------------------------------------- 
 */
 #special {padding-bottom: 100px; background-color: var(--sec-bg-color);}
@@ -229,7 +265,7 @@ Start Special Section
 
 /* 
 ---------------------------------------------
-Start Tags Section 
+Tags Section 
 --------------------------------------------- 
 */
 #tags {
@@ -254,6 +290,148 @@ Start Tags Section
 #tags .container .tag-box h5,
 #tags .container .tag-box p {margin-bottom: 20px;}
 
+/* 
+---------------------------------------------
+Sale Section
+--------------------------------------------- 
+*/
+#sale .container p {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 30px 0px;
+    line-height: 1.5;
+}
+
+/* 
+---------------------------------------------
+Footer
+--------------------------------------------- 
+*/
+footer {
+    border-top: 1px solid #CCC;
+}
+
+footer .container .prim {padding-bottom: 80px;}
+
+footer .container .slogan {
+    text-align: center;
+    padding: 30px 0px;
+}
+
+footer .container .slogan img {
+    max-width: 30%;
+    margin-bottom: 30px;
+}
+
+footer .for-her,
+footer .for-him {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .for-her h2,
+footer .for-him h2,
+footer .container .sub h2{
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+footer a {
+    color: rgba(0,0,0,0.51);
+    text-decoration: none;
+    margin: 5px 0px;
+    transition: var(--main-trans-time);
+}
+
+footer a:hover {
+    color: #005f9b;
+}
+
+footer .container .sub {
+    margin-top: 30px;
+    text-align: center;
+}
+
+footer .container .sub input[type='email'] {
+    padding: 12px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: 1px solid #CCC;
+}
+
+footer .container .sub input[type='email']::placeholder {font-size: .9rem;}
+
+footer .container .sub button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 28px;
+    color: #FFF;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #0084d6;
+    transition: var(--main-trans-time);
+}
+
+footer .container .sub button:hover {
+    background-color: #005f9b;
+}
+
+/* 
+---------------------------------------------
+Links
+--------------------------------------------- 
+*/
+#links {
+    border-top: 1px solid #CCC;
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+#links .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#links .container p {
+    padding-bottom: 40px;
+    color: #000000d2;
+    font-size: .95rem;
+}
+
+#links .container .icons {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#links .container .icons a {color: #000;}
+
+#links .container .icons i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--main-trans-time);
+}
+
+#links .container .icons i:hover {
+    color: #005f9b;
+}
+
+/* 
+---------------------------------------------
+Small Devices
+--------------------------------------------- 
+*/
 @media (min-width:567px) {
     
 }
@@ -271,7 +449,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    (Meduim) Start Hero Section
+    (Meduim) Hero Section
     --------------------------------------------- 
     */
     #hero .container .main-txt {
@@ -296,7 +474,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    (Meduim) Start Cards Section 
+    (Meduim) Cards Section 
     --------------------------------------------- 
     */
     #cards .container {
@@ -330,7 +508,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    (Meduim) Start Featured Products Section 
+    (Meduim) Featured Products Section 
     --------------------------------------------- 
     */
     #featured {padding-top: 100px;}
@@ -341,7 +519,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    (Meduim) Start Special Section 
+    (Meduim) Special Section 
     --------------------------------------------- 
     */
     #special .container {
@@ -353,7 +531,7 @@ Meduim Devices
 
     /* 
     ---------------------------------------------
-    (Meduim) Start Tags Section 
+    (Meduim) Tags Section 
     --------------------------------------------- 
     */
     #tags .container {
@@ -365,6 +543,43 @@ Meduim Devices
     }
 
     #tags .container .tag-box {width: calc((100% / 2) - 50px);}
+    #tags .container .tag-box img {max-width: 18%;}
+
+    /* 
+    ---------------------------------------------
+    (Meduim) Footer 
+    --------------------------------------------- 
+    */
+    footer .container .prim {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        padding-top: 30px;
+    }
+    footer .container .slogan img {max-width: 45%;}
+    footer .container .slogan,
+    footer .container .sub{text-align: start; width: calc((100%/4));}
+
+    footer .container .for-her,
+    footer .container .for-him {align-items: flex-start;}
+
+    /* 
+    ---------------------------------------------
+    (Meduim) Links
+    --------------------------------------------- 
+    */
+    #links .container p {
+        padding-bottom: 0px;
+    }
+    #links .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #links .container .icons {
+        width: 25%;
+    }
 
 }
 
@@ -380,7 +595,7 @@ Large Devices
 
     /* 
     ---------------------------------------------
-    (Large) Start Hero Section
+    (Large) Hero Section
     --------------------------------------------- 
     */
     #hero .container .main-txt h1{
@@ -394,7 +609,7 @@ Large Devices
 
     /* 
     ---------------------------------------------
-    (Large) Start Cards Section 
+    (Large) Cards Section 
     --------------------------------------------- 
     */
     #cards .container {gap: 20px;}
@@ -405,7 +620,7 @@ Large Devices
 
     /* 
     ---------------------------------------------
-    (Large) Start Featured Products Section 
+    (Large) Featured Products Section 
     --------------------------------------------- 
     */
     #featured .container h2:first-of-type{font-size: 2.7rem;}
@@ -414,18 +629,26 @@ Large Devices
 
     /* 
     ---------------------------------------------
-    (Large) Start Special Section 
+    (Large) Special Section 
     --------------------------------------------- 
     */
     #special .container .btn {width: 18%;}
 
     /* 
     ---------------------------------------------
-    (Large) Start Tags Section 
+    (Large) Tags Section 
     --------------------------------------------- 
     */
     #tags .container {padding: 0px 20px;}
     #tags .container .tag-box {width: calc((100% / 2) - 80px);}
+
+    /* 
+    ---------------------------------------------
+    (Large) Sale Section
+    --------------------------------------------- 
+    */
+    #sale .container p {padding: 50px 0px;
+}
 }
 
 /* 
@@ -440,7 +663,7 @@ Extra Large Devices
 
     /* 
     ---------------------------------------------
-    (Extra) Start Hero Section
+    (Extra) Hero Section
     --------------------------------------------- 
     */
     #hero {
@@ -454,7 +677,7 @@ Extra Large Devices
 
     /* 
     ---------------------------------------------
-    (Extra) Start Cards Section 
+    (Extra) Cards Section 
     --------------------------------------------- 
     */
     #cards .container .card {
@@ -468,7 +691,7 @@ Extra Large Devices
 
     /* 
     ---------------------------------------------
-    (Extra) Start Featured Products Section 
+    (Extra) Featured Products Section 
     --------------------------------------------- 
     */
     #featured .container .products {padding: 0px 0px;}
@@ -477,15 +700,16 @@ Extra Large Devices
 
     /* 
     ---------------------------------------------
-    (Extra) Start Special Section 
+    (Extra) Special Section 
     --------------------------------------------- 
     */
     #special .container {padding: 100px 90px; background-attachment: fixed;}
 
     /* 
     ---------------------------------------------
-    (Large) Start Tags Section 
+    (Extra) Tags Section 
     --------------------------------------------- 
     */
     #tags .container .tag-box {width: calc((100% / 4) - 30px);}
+    #tags .container .tag-box img {max-width: 20%;}
 }
