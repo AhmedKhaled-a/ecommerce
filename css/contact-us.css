@@ -1,11 +1,10 @@
-html, body {
-    font-family: "Lato" sans-serif;
-    color: #000;
+html, body, * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 main {
+    font-family: "Lato" sans-serif;
     width: 100%;
     background-color: #f5f7f9;
 }
@@ -51,7 +50,7 @@ main {
     align-items :center;   
     gap: 1.2em;
 }
-.contact {
+.contactCard {
     text-align: center;
     color:#000;
     margin-top: 2rem;
