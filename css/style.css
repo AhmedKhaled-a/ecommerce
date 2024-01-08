@@ -3,17 +3,17 @@
 Table of contents
 ---------------------------------------------
 01. global styles
-02. Hero Section
-03. Cards Section 
-04. Featured Products Section 
-05. Special Section 
-06. Tags Section 
-07. Sale Section
-08. Footer
-09. Links
+02. NavBar Section
+03. Hero Section
+04. Cards Section 
+05. Featured Products Section 
+06. Special Section 
+07. Tags Section 
+08. Sale Section
+09. Footer
+10. Links
 --------------------------------------------- 
 */
-
 
 /* 
 ---------------------------------------------
@@ -22,46 +22,123 @@ global styles
 */
 
 :root {
-    --sec-bg-color: #f5f7f9;
-    --overlay-color: rgba(1, 16, 26, 0.486);
-    --main-trans-time: 0.3s;
+  --sec-bg-color: #f5f7f9;
+  --overlay-color: rgba(1, 16, 26, 0.486);
+  --main-trans-time: 0.3s;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
 }
 
 .container {
-    margin-left: 20px; margin-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .btn {
-    padding: 15px;
-    display: block;
-    background-color: #fff;
-    width: 100%;
-    text-decoration: none;
-    color: #000;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: .9rem;
-    font-weight: bold;
-    transition: var(--main-trans-time);
+  padding: 15px;
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: var(--main-trans-time);
 }
 
 .btn:hover {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
+/*
+---------------------------------------------
+NavBar Section
+---------------------------------------------
+*/
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  font-weight: bold;
+  color: white;
+  padding: 0 20px;
+}
+.logo {
+  margin-left: 20px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-right: auto;
+}
+.nav-links li {
+  margin-right: 35px;
+}
+.home {
+  margin-left: 20px;
+}
+nav a {
+  text-decoration: none;
+}
+.nav-links li a {
+  display: inline-block;
+  padding: 20px 5px;
+  transition: transform 0.5s, color 0.4s;
+}
+.nav-links li a:hover {
+  color: #ffc107;
+  transform: scale(1.4);
+}
+.nav-links a:link {
+  color: white;
+}
+.icons a:link{
+    color: white;
+}
+a:visited {
+  color: inherit;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.fa-solid{
+    font-size: 30px;
+  }
+  .icons a {
+    padding: 15px;
+    transition: transform 0.5s, color 0.4s;
+  }
+  
+  .icons a:hover {
+    color: #ffc107;
+    transform: scale(1.4);
+  }
 /* 
 ---------------------------------------------
 Hero Section
@@ -69,66 +146,70 @@ Hero Section
 */
 
 #hero {
-    height: 55vh;
-    background: var(--overlay-color) url('../imgs/home-new-bg-free-img.jpg') no-repeat center center/cover;
-    background-blend-mode: overlay;
+  height: 55vh;
+  background: var(--overlay-color) url("../imgs/home-new-bg-free-img.jpg")
+    no-repeat center center/cover;
+  background-blend-mode: overlay;
 }
 
 #hero,
 #hero .container .main-txt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #hero .container .main-txt {
-    color: #fff;
-    text-align: center;
-    text-transform: capitalize;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 #hero .container .main-txt h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 #hero .container .main-txt h4 {
-    margin: 15px 0px; 
-    font-size: 1.4rem;
+  margin: 15px 0px;
+  font-size: 1.4rem;
 }
 
 #hero .container .main-txt h1,
 #hero .container .main-txt h4 {
-    animation-name: fade;
-    animation-duration: 3.3s;
+  animation-name: fade;
+  animation-duration: 3.3s;
 }
 
-
 @keyframes fade {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #hero .container .main-txt div {
-    margin: 15px 0px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-wrap: wrap;
+  margin: 15px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #hero .container .main-txt a:last-of-type {
-    margin-top: 20px;
-    background-color: transparent;
-    border: 1px solid  #FFF;
-    color: #fff;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 #hero .container .main-txt a:last-of-type:hover {
-    background-color: #FFF;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 /* 
@@ -136,34 +217,37 @@ Hero Section
 Cards Section 
 --------------------------------------------- 
 */
-#cards .container {padding: 80px 0px}
+#cards .container {
+  padding: 80px 0px;
+}
 #cards .container .card:first-of-type,
 #cards .container .card:last-of-type {
-    background: rgba(0, 0, 0, 0.5) url('../imgs/men-fashion-card.jpg') no-repeat center center/cover;
-    background-blend-mode: overlay;
+  background: rgba(0, 0, 0, 0.5) url("../imgs/men-fashion-card.jpg") no-repeat
+    center center/cover;
+  background-blend-mode: overlay;
 }
 
 #cards .container .card:nth-child(2) {
-    background: rgba(0, 0, 0, 0.5) url('../imgs/footwear-card.jpg') no-repeat center center/cover;
-    background-blend-mode: overlay;
+  background: rgba(0, 0, 0, 0.5) url("../imgs/footwear-card.jpg") no-repeat
+    center center/cover;
+  background-blend-mode: overlay;
 }
 
 #cards .container .card {
-    padding: 120px 20px 35px 20px;
-    margin-top: 20px;
-    color: #FFF;
+  padding: 120px 20px 35px 20px;
+  margin-top: 20px;
+  color: #fff;
 }
 
 #cards .container .card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
 }
 
 #cards .container .card p {
-    margin-bottom: 20px;
-    line-height: 2;
+  margin-bottom: 20px;
+  line-height: 2;
 }
-
 
 /* 
 ---------------------------------------------
@@ -171,108 +255,116 @@ Featured Products Section
 --------------------------------------------- 
 */
 #featured {
-    background-color: var(--sec-bg-color);
-    text-align: center;
-    padding: 40px 0px;
+  background-color: var(--sec-bg-color);
+  text-align: center;
+  padding: 40px 0px;
 }
 
 #featured .container h2:first-child {
-    text-transform: capitalize;
-    margin-bottom: 28px;
+  text-transform: capitalize;
+  margin-bottom: 28px;
 }
 
 #featured .container .line {
-    width: 30%;
-    height: 2px;
-    margin: 0px auto;
-    background-color: #0084d6;
+  width: 30%;
+  height: 2px;
+  margin: 0px auto;
+  background-color: #0084d6;
 }
 
 #featured .container .products {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: start;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: start;
 }
 
 #featured .container .products .product {
-    width: 47%;
-    margin-bottom: 50px;
-    position: relative;
+  width: 47%;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 #featured .container .products .product img {
-    max-width: 100%;
-    margin-bottom: 10px;
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 #featured .container .products .product:hover::after {
-    font-family: 'FontAwesome';
-    content: '\f290';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 17px;
-    right: 18px;
-    border-radius: 50%;
-    background-color: #FFF;
-    box-shadow: 0px 1px 3px 0px;
-    cursor: pointer;
+  font-family: "FontAwesome";
+  content: "\f290";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 17px;
+  right: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px 0px;
+  cursor: pointer;
 }
 
-#featured .container .products .product h2 {font-size: .9rem;}
+#featured .container .products .product h2 {
+  font-size: 0.9rem;
+}
 
 #featured .container .products .product .catg {
-    font-size: .9rem;
-    color: #abacad;
-    margin: 10px 0px;
-    text-transform: capitalize;
+  font-size: 0.9rem;
+  color: #abacad;
+  margin: 10px 0px;
+  text-transform: capitalize;
 }
 
-#featured .container .products .product .price {font-size: .95rem;}
+#featured .container .products .product .price {
+  font-size: 0.95rem;
+}
 
 /* 
 ---------------------------------------------
 Special Section 
 --------------------------------------------- 
 */
-#special {padding-bottom: 100px; background-color: var(--sec-bg-color);}
+#special {
+  padding-bottom: 100px;
+  background-color: var(--sec-bg-color);
+}
 #special .container {
-    background: var(--overlay-color) url('../imgs/special-bg.jpg') no-repeat center center/cover;
-    background-blend-mode: overlay;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 55px 20px;
-    color: #FFF;
+  background: var(--overlay-color) url("../imgs/special-bg.jpg") no-repeat
+    center center/cover;
+  background-blend-mode: overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 55px 20px;
+  color: #fff;
 }
 
 #special .container h4:first-of-type {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
 }
 
 #special .container h2 {
-    margin-bottom: 20px;
-    font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
 }
 
 #special .container p {
-    line-height: 1.5;
-    margin-bottom: 30px;
-    text-align: center;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 #special .container h4:last-of-type {
-    text-align: center;
-    margin-bottom: 35px;
-    font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 1.2rem;
 }
 
 /* 
@@ -281,26 +373,32 @@ Tags Section
 --------------------------------------------- 
 */
 #tags {
-    background-color: var(--sec-bg-color);
-    border-bottom: 1px solid #CCC;
+  background-color: var(--sec-bg-color);
+  border-bottom: 1px solid #ccc;
 }
 
 #tags .container .tag-box {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-#tags .container .tag-box img {max-width: 15%;}
+#tags .container .tag-box img {
+  max-width: 15%;
+}
 
-#tags .container .tag-box h5 {font-size: 1.1rem;}
+#tags .container .tag-box h5 {
+  font-size: 1.1rem;
+}
 
 #tags .container .tag-box p {
-    line-height: 1.8;
-    color: #000000d2;
+  line-height: 1.8;
+  color: #000000d2;
 }
 #tags .container .tag-box img,
 #tags .container .tag-box h5,
-#tags .container .tag-box p {margin-bottom: 20px;}
+#tags .container .tag-box p {
+  margin-bottom: 20px;
+}
 
 /* 
 ---------------------------------------------
@@ -308,11 +406,11 @@ Sale Section
 --------------------------------------------- 
 */
 #sale .container p {
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding: 30px 0px;
-    line-height: 1.5;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 30px 0px;
+  line-height: 1.5;
 }
 
 /* 
@@ -321,79 +419,83 @@ Footer
 --------------------------------------------- 
 */
 footer {
-    border-top: 1px solid #CCC;
+  border-top: 1px solid #ccc;
 }
 
-footer .container .prim {padding-bottom: 80px;}
+footer .container .prim {
+  padding-bottom: 80px;
+}
 
 footer .container .slogan {
-    text-align: center;
-    padding: 30px 0px;
+  text-align: center;
+  padding: 30px 0px;
 }
 
 footer .container .slogan img {
-    max-width: 30%;
-    margin-bottom: 30px;
+  max-width: 30%;
+  margin-bottom: 30px;
 }
 
 footer .for-her,
 footer .for-him {
-    text-align: center;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 footer .for-her h2,
 footer .for-him h2,
-footer .container .sub h2{
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    font-weight: 500;
+footer .container .sub h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 footer a {
-    color: rgba(0,0,0,0.51);
-    text-decoration: none;
-    margin: 5px 0px;
-    transition: var(--main-trans-time);
+  color: rgba(0, 0, 0, 0.51);
+  text-decoration: none;
+  margin: 5px 0px;
+  transition: var(--main-trans-time);
 }
 
 footer a:hover {
-    color: #005f9b;
+  color: #005f9b;
 }
 
 footer .container .sub {
-    margin-top: 30px;
-    text-align: center;
+  margin-top: 30px;
+  text-align: center;
 }
 
-footer .container .sub input[type='email'] {
-    padding: 12px;
-    margin-bottom: 30px;
-    width: 100%;
-    border: 1px solid #CCC;
+footer .container .sub input[type="email"] {
+  padding: 12px;
+  margin-bottom: 30px;
+  width: 100%;
+  border: 1px solid #ccc;
 }
 
-footer .container .sub input[type='email']::placeholder {font-size: .9rem;}
+footer .container .sub input[type="email"]::placeholder {
+  font-size: 0.9rem;
+}
 
 footer .container .sub button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 16px 28px;
-    color: #FFF;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #0084d6;
-    transition: var(--main-trans-time);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 16px 28px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #0084d6;
+  transition: var(--main-trans-time);
 }
 
 footer .container .sub button:hover {
-    background-color: #005f9b;
+  background-color: #005f9b;
 }
 
 /* 
@@ -402,41 +504,43 @@ Links
 --------------------------------------------- 
 */
 #links {
-    border-top: 1px solid #CCC;
-    padding-top: 30px;
-    padding-bottom: 70px;
+  border-top: 1px solid #ccc;
+  padding-top: 30px;
+  padding-bottom: 70px;
 }
 
 #links .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #links .container p {
-    padding-bottom: 40px;
-    color: #000000d2;
-    font-size: .95rem;
+  padding-bottom: 40px;
+  color: #000000d2;
+  font-size: 0.95rem;
 }
 
 #links .container .icons {
-    width: 75%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#links .container .icons a {color: #000;}
+#links .container .icons a {
+  color: #000;
+}
 
 #links .container .icons i {
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: var(--main-trans-time);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--main-trans-time);
 }
 
 #links .container .icons i:hover {
-    color: #005f9b;
+  color: #005f9b;
 }
 
 /* 
@@ -444,8 +548,7 @@ Links
 Small Devices
 --------------------------------------------- 
 */
-@media (min-width:567px) {
-    
+@media (min-width: 567px) {
 }
 
 /* 
@@ -453,146 +556,182 @@ Small Devices
 Meduim Devices
 --------------------------------------------- 
 */
-@media (min-width:768px) {
-    .container {
-        width: 720px;
-        margin-left: auto; margin-right: auto;
-    }
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Meduim) Hero Section
     --------------------------------------------- 
     */
-    #hero .container .main-txt {
-        width: 80%;
-        align-items: flex-start;
-        text-align: left;
-        padding-left: 25px;
-    }
+  #hero .container .main-txt {
+    width: 80%;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 25px;
+  }
 
-    #hero .container .main-txt h1 {
-        font-size: 3.125rem;
-        width: 70%;
-    }
+  #hero .container .main-txt h1 {
+    font-size: 3.125rem;
+    width: 70%;
+  }
 
-    .btn {
-        width: 30%;
-    }
-    
-    #hero .container .main-txt a:last-of-type {margin-top: 0; margin-left: 20px;}
+  .btn {
+    width: 30%;
+  }
 
-    #hero .container .main-txt div {justify-content: flex-start;}
+  #hero .container .main-txt a:last-of-type {
+    margin-top: 0;
+    margin-left: 20px;
+  }
 
-    /* 
+  #hero .container .main-txt div {
+    justify-content: flex-start;
+  }
+
+  /* 
     ---------------------------------------------
     (Meduim) Cards Section 
     --------------------------------------------- 
     */
-    #cards .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 25px;
-    }
-    #cards .container .card {
-        padding-top: 220px;
-        padding-bottom: 20px;
-        min-height: 480px;
-    }
+  #cards .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+  }
+  #cards .container .card {
+    padding-top: 220px;
+    padding-bottom: 20px;
+    min-height: 480px;
+  }
 
-    #cards .container .card:last-of-type,
-    #cards .container .card:first-of-type {
-        background-position: center left;
-    }
-    #cards .container .card:nth-child(2) {background-position: center right;}
-    #cards .container .card h3 {
-        font-size: 1.4rem;
-        font-weight: bolder;
-        margin-top: 50px;
-        margin-bottom: 15px;
-    }
-    #cards .container .card p {
-        margin-bottom: 20px;
-        line-height: 1.5;
-    }
-    #cards .container .card .btn {width: 75%;}
+  #cards .container .card:last-of-type,
+  #cards .container .card:first-of-type {
+    background-position: center left;
+  }
+  #cards .container .card:nth-child(2) {
+    background-position: center right;
+  }
+  #cards .container .card h3 {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+  #cards .container .card p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  #cards .container .card .btn {
+    width: 75%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Meduim) Featured Products Section 
     --------------------------------------------- 
     */
-    #featured {padding-top: 100px;}
-    #featured .container .line {width: 15%;}
-    #featured .container .products {padding: 0px 40px;}
-    #featured .container .products .product {width: calc((100% / 3) - 10px);}
-    #featured .container .products .product img {max-width: 95%;}
+  #featured {
+    padding-top: 100px;
+  }
+  #featured .container .line {
+    width: 15%;
+  }
+  #featured .container .products {
+    padding: 0px 40px;
+  }
+  #featured .container .products .product {
+    width: calc((100% / 3) - 10px);
+  }
+  #featured .container .products .product img {
+    max-width: 95%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Meduim) Special Section 
     --------------------------------------------- 
     */
-    #special .container {
-        align-items: flex-start;
-        padding: 60px 50px;
-    }
-    #special .container p, #special .container h4:last-of-type {text-align: start; width: 67%;}
-    #special .container .btn {width: 25%;}
+  #special .container {
+    align-items: flex-start;
+    padding: 60px 50px;
+  }
+  #special .container p,
+  #special .container h4:last-of-type {
+    text-align: start;
+    width: 67%;
+  }
+  #special .container .btn {
+    width: 25%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Meduim) Tags Section 
     --------------------------------------------- 
     */
-    #tags .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 0px 40px;
-    }
+  #tags .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px 40px;
+  }
 
-    #tags .container .tag-box {width: calc((100% / 2) - 50px);}
-    #tags .container .tag-box img {max-width: 18%;}
+  #tags .container .tag-box {
+    width: calc((100% / 2) - 50px);
+  }
+  #tags .container .tag-box img {
+    max-width: 18%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Meduim) Footer 
     --------------------------------------------- 
     */
-    footer .container .prim {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
-        padding-top: 30px;
-    }
-    footer .container .slogan img {max-width: 45%;}
-    footer .container .slogan,
-    footer .container .sub{text-align: start; width: calc((100%/4));}
+  footer .container .prim {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 30px;
+  }
+  footer .container .slogan img {
+    max-width: 45%;
+  }
+  footer .container .slogan,
+  footer .container .sub {
+    text-align: start;
+    width: calc((100% / 4));
+  }
 
-    footer .container .for-her,
-    footer .container .for-him {align-items: flex-start;}
+  footer .container .for-her,
+  footer .container .for-him {
+    align-items: flex-start;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Meduim) Links
     --------------------------------------------- 
     */
-    #links .container p {
-        padding-bottom: 0px;
-    }
-    #links .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  #links .container p {
+    padding-bottom: 0px;
+  }
+  #links .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    #links .container .icons {
-        width: 25%;
-    }
-
+  #links .container .icons {
+    width: 25%;
+  }
 }
 
 /* 
@@ -600,67 +739,82 @@ Meduim Devices
 Large Devices
 --------------------------------------------- 
 */
-@media (min-width:992px) {
-    .container {
-        width: 930px;
-    }
+@media (min-width: 992px) {
+  .container {
+    width: 930px;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Large) Hero Section
     --------------------------------------------- 
     */
-    #hero .container .main-txt h1{
-        width: 70%;
-        font-size: 4rem;
-    }
+  #hero .container .main-txt h1 {
+    width: 70%;
+    font-size: 4rem;
+  }
 
-    .btn {
-        width: 20%;
-    }
+  .btn {
+    width: 20%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Large) Cards Section 
     --------------------------------------------- 
     */
-    #cards .container {gap: 20px;}
-    #cards .container .card {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+  #cards .container {
+    gap: 20px;
+  }
+  #cards .container .card {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Large) Featured Products Section 
     --------------------------------------------- 
     */
-    #featured .container h2:first-of-type{font-size: 2.7rem;}
-    #featured .container .line {width: 10%;}
-    #featured .container .products .product {width: calc((100% / 5) - 10px);}
+  #featured .container h2:first-of-type {
+    font-size: 2.7rem;
+  }
+  #featured .container .line {
+    width: 10%;
+  }
+  #featured .container .products .product {
+    width: calc((100% / 5) - 10px);
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Large) Special Section 
     --------------------------------------------- 
     */
-    #special .container .btn {width: 18%;}
+  #special .container .btn {
+    width: 18%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Large) Tags Section 
     --------------------------------------------- 
     */
-    #tags .container {padding: 0px 20px;}
-    #tags .container .tag-box {width: calc((100% / 2) - 80px);}
+  #tags .container {
+    padding: 0px 20px;
+  }
+  #tags .container .tag-box {
+    width: calc((100% / 2) - 80px);
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Large) Sale Section
     --------------------------------------------- 
     */
-    #sale .container p {padding: 50px 0px;
-}
+  #sale .container p {
+    padding: 50px 0px;
+  }
 }
 
 /* 
@@ -668,60 +822,84 @@ Large Devices
 Extra Large Devices
 --------------------------------------------- 
 */
-@media (min-width:1200px) {
-    .container {
-        width: 1140px;
-    }
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Extra) Hero Section
     --------------------------------------------- 
     */
-    #hero {
-        height: 88vh;
-        background-attachment: fixed;
-    }
-    #hero .container .main-txt {padding-left: 0px;}
-    #hero .container .main-txt h1 {font-size: 4.4rem;}
-    #hero .container .main-txt .btn {width: 16%;}
-    #hero .container .main-txt h4 {margin: 25px 0px;}
+  #hero {
+    height: 88vh;
+    background-attachment: fixed;
+  }
+  #hero .container .main-txt {
+    padding-left: 0px;
+  }
+  #hero .container .main-txt h1 {
+    font-size: 4.4rem;
+  }
+  #hero .container .main-txt .btn {
+    width: 16%;
+  }
+  #hero .container .main-txt h4 {
+    margin: 25px 0px;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Extra) Cards Section 
     --------------------------------------------- 
     */
-    #cards .container .card {
-        padding-left: 40px;
-        padding-right: 20px;
-    }
-    #cards .container .card h3 {
-        font-size: 1.6rem;
-    }
-    #cards .container .card .btn {width: 50%;}
+  #cards .container .card {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+  #cards .container .card h3 {
+    font-size: 1.6rem;
+  }
+  #cards .container .card .btn {
+    width: 50%;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Extra) Featured Products Section 
     --------------------------------------------- 
     */
-    #featured .container .products {padding: 0px 0px;}
-    #featured .container .products .product img {max-width: 100%;}
-    #featured .container .products .product {width: calc((100% / 5) - 15px);}
+  #featured .container .products {
+    padding: 0px 0px;
+  }
+  #featured .container .products .product img {
+    max-width: 100%;
+  }
+  #featured .container .products .product {
+    width: calc((100% / 5) - 15px);
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Extra) Special Section 
     --------------------------------------------- 
     */
-    #special .container {padding: 100px 90px; background-attachment: fixed;}
+  #special .container {
+    padding: 100px 90px;
+    background-attachment: fixed;
+  }
 
-    /* 
+  /* 
     ---------------------------------------------
     (Extra) Tags Section 
     --------------------------------------------- 
     */
-    #tags .container .tag-box {width: calc((100% / 4) - 30px);}
-    #tags .container .tag-box img {max-width: 20%;}
+  #tags .container .tag-box {
+    width: calc((100% / 4) - 30px);
+  }
+  #tags .container .tag-box img {
+    max-width: 20%;
+  }
 }
+

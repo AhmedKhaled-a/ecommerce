@@ -1,0 +1,128 @@
+html, body , * {
+    font-family: "Lato" sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    width: 100%;
+}
+#imgCont {
+    /* width: 100%; */
+    height: 35em;
+    background-image: url("/imgs/banner-05.jpg");
+    filter: brightness(80%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    /* background-size: 100%; */
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom:4em ;
+    text-align: center;
+}
+
+#imgCont::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+}
+
+#imgCont > span {
+    font-size: 8vw;
+    color: white;
+    top: 2em;
+    position: relative;
+
+}
+
+
+#whoWeAreSec {
+    background-color: #f5f7f9;
+    padding: 2em;
+}
+
+
+
+
+#teamSecG {
+    margin-top: 4em;
+    text-align: center;
+    align-items: center;
+    /* margin-left: 2em; */
+}
+
+/* #teamMembersSec {
+    position: relative;
+    left: 12%;
+} */
+
+#teamMembersSec {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-rows: 50% 50%;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem 1.5rem;
+    justify-items: center;
+    align-items :center;
+}
+
+.team-card {
+    background-color: #f5f7f9;
+    padding: 2em;
+    margin: 4em;
+    width: 16rem;
+    
+}
+
+#followUs {
+    width: 100%;
+    height: 35em;
+    background-image: url("/imgs/followUs.jpg");
+    /* filter: brightness(80%); */
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom:4em ;
+    text-align: center;
+}
+
+
+#followUsLinks {
+    width: 33%;
+    margin-left: 33%;
+    padding-top: 10rem ;
+    background-color: #ffffff;
+}
+
+.social-icon {
+    color: black;
+    padding: 2em;
+}
+
+/* #section1 {
+    background: url('../images/headerimage1.jpg') center center no-repeat;
+    background-size: cover;
+    position: relative;
+} */
+
+
+/* #shadowBox {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 40%;
+} */
+
+
+@media (max-width: 725px) {
+    #teamMembersSec {
+        grid-template-columns: 1fr;
+    }
+}

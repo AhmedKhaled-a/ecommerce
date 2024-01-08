@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Aewsome Library -->
+    <link rel="stylesheet" href="./css/all.min.css" type="text/css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="./css/user.css" type="text/css">
+    <title>Login</title>
+</head>
+<body>
+    <!-- start Nav Section -->
+    <header>
+        <nav>
+            <div class="logo">
+              <a href="#">
+                <img src="imgs/logo1-free-img-140x47.png" alt="Logo" >
+              </a>
+            </div>
+            <ul class="nav-links">
+              <li class="home"><a href="index.html">Home</a></li>
+              <li class="store"><a href="#">Store</a></li>
+              <li class="about"><a href="about.html">About</a></li>
+              <li class="contact"><a href="contact-us.html">Contact-us</a></li>
+            </ul>
+            <div class="icons">
+                <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href=""><i class="fa-solid fa-user"></i></a>
+            </div>
+          </nav>
+    </header>
+<!-- End Nav Section -->
+
+<!-- Start page Section -->
+    <div class="container" id="container" >
+        <div class="form-container sign-up ">
+            <form>
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="E-Mail">
+                <input type="password" placeholder="Password">
+                <button>Sign-Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in ">
+            <form>
+                <h1>Sign In</h1>
+                <input type="email" placeholder="E-Mail">
+                <input type="password" placeholder="Password">
+                <a href="#">Forgot your password ?</a>
+                <button>Sign-Up</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Please enter your E-mail and Password</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello</h1>
+                    <p>Register with you personal details</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End page Section -->
+
+    <!-- Start footer Section -->
+    <section id="links">
+        <div class="container2">
+            <p>Copyright © 2024 ITI. Powered by PHP Track.</p>
+            <div class="icons">
+                <a href="javascript:;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-youtube"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- End footer Section -->
+    
+
+
+    <script src="./js/loginScript.js"></script>
+</body>
+</html>
