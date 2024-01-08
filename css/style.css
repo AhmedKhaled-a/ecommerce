@@ -115,6 +115,9 @@ nav a {
 .nav-links a:link {
   color: white;
 }
+.icons a:link{
+    color: white;
+}
 a:visited {
   color: inherit;
 }
@@ -124,19 +127,18 @@ a:visited {
   list-style: none;
 }
 
-.material-symbols-outlined {
-  font-size: 35px;
-  font-variation-settings: "FILL", "wght" 400, "GRAD" 0, "opsz" 24;
-}
-.icons .material-symbols-outlined a {
-  padding: 15px;
-  transition: transform 0.5s, color 0.4s;
-}
-
-.icons .material-symbols-outlined a:hover {
-  color: #ffc107;
-  transform: scale(1.4);
-}
+.fa-solid{
+    font-size: 30px;
+  }
+  .icons a {
+    padding: 15px;
+    transition: transform 0.5s, color 0.4s;
+  }
+  
+  .icons a:hover {
+    color: #ffc107;
+    transform: scale(1.4);
+  }
 /* 
 ---------------------------------------------
 Hero Section
@@ -900,3 +902,4 @@ Extra Large Devices
     max-width: 20%;
   }
 }
+
