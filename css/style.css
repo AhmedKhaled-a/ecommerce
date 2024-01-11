@@ -63,6 +63,129 @@ html {
   color: #fff;
 }
 
+/* SIDEBAR */
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 700px;
+  padding: 0 10px 0 5px;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  transition: all ease-in-out 1.5s;
+  overflow-x: hidden;
+  z-index: 2222;
+}
+
+.sidebar.closed {
+  right: -700px;
+}
+                      /* sidebar header */
+
+.sidebar header {
+  border-bottom: 1px dotted rgb(184, 178, 178);
+  padding:  14px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;;
+  
+}
+
+.sidebar .image-text img {
+  width: 40px;
+  border-radius: 6px;
+}
+
+.sidebar header .image-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .text {
+  font-size: 18px;
+  font-weight: 700;
+}
+.sidebar .image {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+} 
+
+/* sidebar items */
+
+.sidebar .sidebar-items {
+  margin-top: 12px;
+}
+.sidebar-items .items {
+  padding: 0;
+}
+.sidebar-items .item img {
+  width: 70px;
+  border-radius: 50%;
+  margin: 10px 10px 0 0;
+}
+.sidebar-items .item {   
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(184, 178, 178);
+  /* border-radius: 25px; */
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  
+}
+.sidebar-items .item .item-desc {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.sidebar-items .item .item-desc .item-price {
+  margin-top: 20px;
+}
+.sidebar-items .delete-item-btn,
+.sidebar .toggle-sidebar{
+  cursor: pointer;
+  color: #626161;
+}
+
+/* sidebar footer */
+
+.sidebar .sidebar-footer {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  background-color: #FFF;
+  font-size: large;
+  font-weight: 600;
+}
+.sidebar  .price-subtotal {
+  display: flex;
+  /* background-color: #6979d3; */
+  justify-content: space-between;
+  
+  padding: 10px;
+  background-color: #6979d3;
+}
+
+.sidebar .sidebar-footer .view-btn {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #6979d3;
+  border: none;
+  font-weight: 600;
+}
+/* SIDEBAR END 
+---------------------------------------------
+*/
+
 /*
 ---------------------------------------------
 NavBar Section
@@ -130,12 +253,13 @@ a:visited {
 .fa-solid{
     font-size: 30px;
   }
-  .icons a {
+  .icons i {
     padding: 15px;
     transition: transform 0.5s, color 0.4s;
+    cursor: pointer;
   }
   
-  .icons a:hover {
+  .icons i:hover {
     color: #ffc107;
     transform: scale(1.4);
   }
