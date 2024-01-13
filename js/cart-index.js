@@ -2,6 +2,8 @@ const addProduct = document.querySelectorAll('#featured .container .products .pr
 const ul = document.querySelector('.items');
 // the logged in user's data
 // let activeUser = JSON.parse(localStorage.getItem('ListName')) // to get the looged in user from local storage instead of the next line
+let totalQuantity = 0;
+let totalPrice = 0;
 let activeUser = {
     'userId': 2,
     'userName': 'Mahmoud Ahmed',
@@ -36,6 +38,7 @@ let activeUser = {
 let users = JSON.parse(localStorage.getItem('users'))
 let userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];
 
+// load the logged in user items list
 for (let x = 0; x < userCart.length; x++) {
     if ((activeUser['userId'] == userCart[x]['userId']) && (userCart[x]['products'].length !== 0)) {
         for(let i = 0; i < userCart[x]['products'].length; i++) {
@@ -65,7 +68,7 @@ function createElement(productObj) {
     // create span for product price
     let cartPrice = document.createElement('span');
     cartPrice.classList.add('item-price');
-    cartPrice.textContent = `${productObj.productQuantity} x $${productObj.productPrice}`;
+    cartPrice.innerHTML = `<span class="item-quantity">${productObj.productQuantity}</span> x $<span class="final-price">${productObj.productPrice}</span>`;
     // add name and price to the item div
     cartDiv.appendChild(cartName);
     cartDiv.appendChild(cartPrice);
@@ -85,6 +88,7 @@ function createElement(productObj) {
     cartLi.appendChild(cartDeleteBtn);
 
     ul.appendChild(cartLi);
+    updateTotals();
 }
 
 
@@ -122,7 +126,7 @@ addProduct.forEach((btn) => {
                 if (item) { // if the item exists
                     for (let i = 0; i < userCart[x].products.length; i++) {
                         if (userCart[x].products[i].productId == item.id) {
-                            item.querySelector('.item-price').innerHTML = `${userCart[x].products[i].productQuantity+1} x $${productObj.productPrice}`;
+                            item.querySelector('.item-price').innerHTML = `<span class="item-quantity">${userCart[x].products[i].productQuantity+1}</span> x $<span class="final-price">${productObj.productPrice}</span>`;
                         }
                     }
 
@@ -150,5 +154,54 @@ addProduct.forEach((btn) => {
         }
         // update the userCart data in the localStorage
         localStorage.setItem('userCart', JSON.stringify(userCart));
+        updateTotals()
     })
 })
+
+
+// Function to update total quantity and total price
+function updateTotals() {
+    // Reset totals before recalculating
+    totalQuantity = 0;
+    totalPrice = 0;
+
+    // Iterate through each item in the cart
+    document.querySelectorAll('.sidebar-items .items .item').forEach(item => {
+        // Extract quantity and price from the item
+        let quantity = parseInt(item.querySelector('.item-desc .item-price .item-quantity').textContent);
+        let price = parseFloat(item.querySelector('.item-desc .item-price .final-price').textContent);
+
+        // Update total quantity and total price
+        totalQuantity += quantity;
+        totalPrice += quantity * price;
+    });
+
+    // Update the display of total quantity and total price
+    document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`; // Assuming you want two decimal places
+}
+
+
+// Delete Item Button
+const sidebarItemsContainer = document.querySelector('.sidebar-items');
+
+sidebarItemsContainer.addEventListener('click', function(event) {
+    const target = event.target;
+
+    // Check if the clicked element is a delete button
+    if (target.classList.contains('fa-circle-xmark')) {
+        let itemId = target.closest('.item').id;
+        target.closest('.item').remove();
+
+        for (let i = 0; i < userCart.length; i++) {
+            if (userCart[i].userId === activeUser.userId) {
+                for (let x = 0; x < userCart[i].products.length; x++) {
+                    if (userCart[i].products[x].productId == itemId) {
+                        userCart[i].products.splice(x, 1)
+                        localStorage.setItem('userCart', JSON.stringify(userCart))
+                    }
+                }
+            }
+        }
+    }
+    updateTotals();
+});
