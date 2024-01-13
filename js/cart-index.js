@@ -6,7 +6,10 @@ let activeUser = {
     'userId': 2,
     'userName': 'Mahmoud Ahmed',
 }
-
+//---------------------------------------------------------------------------
+//----------------------------Ex-List-Of-Users-------------------------------
+//---------------------------------------------------------------------------
+//
 // list of all users signed up with thier cart products
 // let users = [
 //     {
@@ -26,10 +29,12 @@ let activeUser = {
 //     },
 // ]
 // localStorage.setItem('users', JSON.stringify(users))
+//
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 let users = JSON.parse(localStorage.getItem('users'))
 let userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];
-// let userCart = JSON.parse(localStorage.getItem('userCart'))
-// console.log(userCart[0]['products'].length);
 
 for (let x = 0; x < userCart.length; x++) {
     if ((activeUser['userId'] == userCart[x]['userId']) && (userCart[x]['products'].length !== 0)) {
@@ -44,6 +49,7 @@ function createElement(productObj) {
     // create a li item for the product just added
     let cartLi = document.createElement('li');
     cartLi.classList.add('item');
+    cartLi.setAttribute('id', productObj.productId)
 
     // create an img tag and add the img src
     let cartImg = document.createElement('img');
@@ -59,7 +65,7 @@ function createElement(productObj) {
     // create span for product price
     let cartPrice = document.createElement('span');
     cartPrice.classList.add('item-price');
-    cartPrice.textContent = `1 x ${productObj.productPrice}`;
+    cartPrice.textContent = `${productObj.productQuantity} x $${productObj.productPrice}`;
     // add name and price to the item div
     cartDiv.appendChild(cartName);
     cartDiv.appendChild(cartPrice);
@@ -82,20 +88,6 @@ function createElement(productObj) {
 }
 
 
-// let userCart = [
-//     {
-//         'userId': 1,  // to save the products of the active login user (activeUser.userId)
-//         'products': [],
-//     },
-//     {
-//         'userId': 2,
-//         'products': [],
-//     },
-// ]
-
-// add products for the active user (loggedIn)
-
-
 // get product info. when clicking on add to cart button
 addProduct.forEach((btn) => {
     btn.addEventListener('click', function () {
@@ -104,82 +96,59 @@ addProduct.forEach((btn) => {
         let pName = product.querySelector('h2').textContent;
         let pImg = product.querySelector('img').src;
         let pPrice = product.querySelector('.price').textContent.slice(1); // price without $ sign
+        let pQuantinty = 1
 
         let productObj = {
             'productId': pId,
             'productName': pName,
             'ProductImg': pImg,
             'productPrice': pPrice,
+            'productQuantity': pQuantinty,
         }
 
-        createElement(productObj);
+        
+
 
         let found = false; // a flag to indicate if the user is found in the userCart array
         for (let x = 0; x < userCart.length; x++) {
-            if (activeUser.userId === userCart[x]['userId']) {
-                // if the user is found, push the product to their products array
-                userCart[x].products.push(productObj);
-                found = true; // set the flag to true
-                break; // exit the loop
+            if (activeUser.userId === userCart[x]['userId']) { // if the user is found, check product and update quantity if the same product exists
+                // check if the product exists += the quantinty by one
+                let allItems = document.querySelectorAll('li.item');
+                // convert the NodeList to an array
+                let allItemsArray = [...allItems];
+                let item = allItemsArray.find(item => item.id === productObj.productId);
+
+
+                if (item) { // if the item exists
+                    for (let i = 0; i < userCart[x].products.length; i++) {
+                        if (userCart[x].products[i].productId == item.id) {
+                            item.querySelector('.item-price').innerHTML = `${userCart[x].products[i].productQuantity+1} x $${productObj.productPrice}`;
+                        }
+                    }
+
+                    for (let i = 0; i < userCart.length; i++) {
+                        if (userCart[i].userId === activeUser.userId) {
+                            for (let x = 0; x < userCart[i].products.length; x++) {
+                                if (userCart[i].products[x].productId == item.id) {
+                                    userCart[i].products[x].productQuantity += 1;
+                                }
+                            }
+                        }
+                    }
+                } else { // if the item does not exist
+                    userCart[x].products.push(productObj);
+                    createElement(productObj)
+                }
+                found = true;
+                break;
             }
         }
         if (!found) {
             // if the user is not found, push a new object with the user id and the product to the userCart array
             userCart.push({ 'userId': activeUser.userId, 'products': [productObj] });
+            createElement(productObj)
         }
         // update the userCart data in the localStorage
         localStorage.setItem('userCart', JSON.stringify(userCart));
-
-        // add products for the active user (loggedIn)
-        for (let i = 0; i < users.length; i++) {
-            if (activeUser.userId == users[i].userId) {
-                // console.log('user id', users[i].userId);
-                users[i].products.push(productObj)
-                // console.log('user products', users[i].products);
-                localStorage.setItem('users', JSON.stringify(users));
-                // let userCart = [
-                //     {
-                //         'userId': users[i].userId,
-                //         'products': []
-                //     }
-                // ]
-                // for (let x = 0; x < userCart.length; x++) {
-                //     if (activeUser.userId !== userCart[x]['userId']) {
-                //         userCart.push({ 'userId': activeUser.userId, 'products': [] })
-                //         userCart[x].products.push(productObj);
-                //     }
-                // }
-                // userCart[i].products.push(productObj);
-                // localStorage.setItem('userCart', JSON.stringify(userCart));
-            }
-        }
-
-        // JSON.parse(localStorage.getItem('userCart'))
-        // console.log('userCart => ', JSON.parse(localStorage.getItem('userCart')));
     })
 })
-
-
-
-// let activeUser = {
-//     'userId': 1,
-//     'userName': 'Mahmoud Ahmed',
-// }
-
-// let users = [
-//     {
-//         'userId': activeUser.userId, // to save the products of the active login user
-//         'products': [{'product 1 form user 1': 'Name 1'}, {'product 1 form user 1': 'name 2'}]
-//     },
-//     {
-//         'userId': 2,
-//         'products': [{'product 1 form user 2': 'Name 1'}, {'product 1 form user 2': 'name 2'}]
-//     },
-// ]
-
-// for (let i = 0; i < users.length; i++) {
-//     if (activeUser.userId == users[i].userId) {
-//         console.log(users[i].userId);
-//         console.log(users[i].products);
-//     }
-// }
