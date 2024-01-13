@@ -1,18 +1,33 @@
-let producsContainer = document.querySelector('.p-container');
+let productsContainer = document.querySelector('.p-container');
 let priceRange = document.querySelector('input[type=range]');
 let price =  priceRange.value;
 let maxPrice =  priceRange.getAttribute('max');
-let category = document.querySelector('.cat')
-let categoryCounter = document.querySelector('.catCounter')
-getAllProducts(price,maxPrice)
+let Electronics = document.querySelector('.electronics');
+let Jewelery = document.querySelector('.jewelery');
+let Men =document.querySelector('.men');
+let Women= document.querySelector('.women');
+let categoryCounter = document.querySelector('.catCounter');
+getAllProducts(price,maxPrice);
 
 priceRange.addEventListener('change',()=>{
     price =  priceRange.value;
     maxPrice =  priceRange.getAttribute('max');
     getAllProducts(price,maxPrice)
 })
-category.addEventListener('click',(e)=>{
-    getCategory (e.target.innerHTML)
+Electronics.addEventListener('click',(e)=>{
+    getCategory (e.target.innerHTML);
+})
+
+Jewelery.addEventListener('click',(e)=>{
+getCategory(e.target.innerHTML);
+})
+
+Men.addEventListener('click',(e)=>{
+    getCategory(e.target.innerHTML);
+})
+
+Women.addEventListener('click',(e)=>{
+    getCategory(e.target.innerHTML);
 })
 
 async function getAllProducts (price,maxPrice) {
@@ -36,7 +51,7 @@ async function getAllProducts (price,maxPrice) {
             `
         }
     }
-    producsContainer.innerHTML=box;
+    productsContainer.innerHTML=box;
 }
 
 async function getCategory (category) {
@@ -57,7 +72,7 @@ async function getCategory (category) {
           </div>
             `
     }
-    producsContainer.innerHTML=box;
+    productsContainer.innerHTML=box;
 }
 
 
