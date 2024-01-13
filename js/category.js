@@ -14,20 +14,20 @@ priceRange.addEventListener('change',()=>{
     maxPrice =  priceRange.getAttribute('max');
     getAllProducts(price,maxPrice)
 })
-Electronics.addEventListener('click',(e)=>{
-    getCategory (e.target.innerHTML);
+Electronics.addEventListener('click',()=>{
+    getCategory ('electronics');
 })
 
-Jewelery.addEventListener('click',(e)=>{
-getCategory(e.target.innerHTML);
+Jewelery.addEventListener('click',()=>{
+getCategory('jewelery');
 })
 
-Men.addEventListener('click',(e)=>{
-    getCategory(e.target.innerHTML);
+Men.addEventListener('click',()=>{
+    getCategory("men's clothing");
 })
 
-Women.addEventListener('click',(e)=>{
-    getCategory(e.target.innerHTML);
+Women.addEventListener('click',()=>{
+    getCategory("women's clothing");
 })
 
 async function getAllProducts (price,maxPrice) {
