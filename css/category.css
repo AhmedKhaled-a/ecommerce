@@ -1,0 +1,485 @@
+
+/*
+---------------------------------------------
+NavBar Section
+---------------------------------------------
+*/
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+  
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    font-weight: bold;
+    color: white;
+    padding: 0 20px;
+  
+  }
+  .logo {
+    margin-left: 20px;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: auto;
+  }
+  .nav-links li {
+    margin-right: 35px;
+  }
+  .home {
+    margin-left: 20px;
+  }
+  nav a {
+    text-decoration: none;
+  }
+  .nav-links li a {
+    display: inline-block;
+    padding: 20px 5px;
+    transition: transform 0.5s, color 0.4s;
+  }
+  .nav-links li a:hover {
+    color: #ffc107;
+    transform: scale(1.4);
+  }
+  .nav-links a:link {
+    color: white;
+  }
+  .icons a:link{
+      color: white;
+  }
+  a:visited {
+    color: inherit;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .fa-solid{
+      font-size: 30px;
+    }
+    .icons a {
+      padding: 15px;
+      transition: transform 0.5s, color 0.4s;
+    }
+    
+    .icons a:hover {
+      color: #ffc107;
+      transform: scale(1.4);
+    }
+    /* Navbar end */
+
+    /* 
+---------------------------------------------
+Footer
+--------------------------------------------- 
+*/
+footer {
+    border-top: 1px solid #ccc;
+    clear: both; /* Clear any floats within the page content */
+}
+
+footer .container {
+    width: 100%;
+    overflow: hidden; /* Clear any floats within the container */
+}
+
+footer .container .prim {
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line if needed */
+    justify-content: space-around;
+}
+  
+  footer .container .slogan {
+    text-align: center;
+    padding: 30px 0px;
+  }
+  
+  footer .container .slogan img {
+    max-width: 30%;
+    margin-bottom: 30px;
+  }
+  
+  footer .for-her,
+  footer .for-him {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  footer .for-her h2,
+  footer .for-him h2,
+  footer .container .sub h2 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  
+  footer a {
+    color: rgba(0, 0, 0, 0.51);
+    text-decoration: none;
+    margin: 5px 0px;
+    transition: var(--main-trans-time);
+  }
+  
+  footer a:hover {
+    color: #005f9b;
+  }
+  
+  footer .container .sub {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  footer .container .sub input[type="email"] {
+    padding: 12px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+  
+  footer .container .sub input[type="email"]::placeholder {
+    font-size: 0.9rem;
+  }
+  
+  footer .container .sub button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 28px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #0084d6;
+    transition: var(--main-trans-time);
+  }
+  
+  footer .container .sub button:hover {
+    background-color: #005f9b;
+  }
+  /* footer end */
+
+.container-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #F5F7F9;
+    border-style: none;
+    margin-top: 70px;
+}
+.products_categories p {
+    margin-right: 130px;
+
+}
+.section, .p-container {
+    display: table-cell;
+    padding: 20px;
+    vertical-align: top;
+    background-color: #F5F7F9;
+}
+
+.section {
+    background-color: #F5F7F9;
+    width: 30%;
+    border-right: 1px solid #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.p-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #f9f9f9;
+    margin-left: 50px;
+}
+
+.product-card {
+    width: 240px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.product-card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.product-category {
+    color: #555;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.product-price {
+    color: #e44d26;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.product-stars {
+    color: #ffd700;
+    margin-top: 5px;
+}
+
+/* Smaller images in the section */
+.section img {
+    max-width: 60%;
+    height: auto;
+}
+
+/* Additional styling for best-seller content */
+.cat1 {
+    text-align: left;
+}
+
+.best-seller td {
+    text-align: left;
+}
+
+.best-seller td img {
+    max-width: 80px;
+    height: auto;
+}
+.search {
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.search-1 {
+    width: 10%;
+    height: 40px;
+    background-color: #0075BE;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* Styles for the filter button */
+.filter {
+    width:30%;
+    height: 40px;
+    background-color: #0075BE;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* Hover effect for buttons */
+.filter:hover,
+.search-1:hover {
+    background-color: #005580;
+}
+
+/* Focus effect for search bar */
+.search:focus {
+    outline: none;
+    border: 1px solid #005580;
+    box-shadow: 0 0 5px rgba(0, 117, 190, 0.5);
+}
+
+
+/* Adjusted styles for the range slider */
+.range-slider {
+    margin-top: 20px;
+}
+
+label[for="price-range"] {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+   
+    background-color: black; /* Set the background color to black */
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: black; /* Set the thumb color to black */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px; /* Adjust to center the thumb on the slider */
+}
+
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.range-values span {
+    color: #555;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5F7F9;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Rest of your existing styles */
+
+/* New styles for buttons and search bar */
+.search {
+    width: 65%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+    outline: none;
+    padding: 5px 10px;
+    transition: border-color 0.3s;
+}
+
+.search-1 {
+    width: 35px;
+    height: 40px;
+    background-color: #0075BE;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+}
+
+.search-1:hover {
+    background-color: #005b91;
+}
+
+.filter {
+    width: 80px;
+    height: 30px;
+    background-color: #0075BE;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.filter:hover {
+    background-color: #005b91;
+}
+
+/* New styles for range input */
+.range-slider {
+    margin-top: 20px;
+}
+
+label[for="price-range"] {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 15px;
+   
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #0075BE;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.range-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Additional styles for aesthetics */
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+/* Add more styles for other elements as needed */
+a{
+    color: #333;
+}
