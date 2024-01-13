@@ -5,8 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\category.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- SIDEBAR -->
+        <section class="sidebar closed">
+        <header>
+            <div class="image-text">
+                <span class="image">  
+                    <img src="imgs/logo.png" alt="">
+                </span>
+    
+                <div class="text header-text">
+                    <span>ShoppingCart</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
+                </div>
+            </div>
+        </header>
+    
+        <section class="sidebar-items">
+            <ul class="items">
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+                <li class="item">
+                    <img src="imgs/product-accessory2-300x300.jpg" alt="">
+                    <div class="item-desc">
+                        <span class="item-name">Anchor Bracelet - Black</span>
+                        <span class="item-price">1 x $150.00</span>
+                    </div>
+                    <div class="delete-item-btn">
+                        <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    
+        <footer class="sidebar-footer">
+            <div class="price-subtotal">
+                <span>Subtotal:</span>
+                <span>$350.00</span>
+            </div>
+            <button class="view-btn"><a href="./cart.html">VIEW CART</a></button>
+            
+        </footer>
+        </section>
+    <!-- SIDEBAR END -->
+
      <!-- start Nav Section -->
      <header>
         <nav>
@@ -16,13 +141,13 @@
               </a>
             </div>
             <ul class="nav-links">
-              <li class="home"><a href="#">Home</a></li>
+              <li class="home"><a href="index.html">Home</a></li>
               <li class="store"><a href="#">Store</a></li>
               <li class="about"><a href="about.html">About</a></li>
               <li class="contact"><a href="contact-us.html">Contact-us</a></li>
             </ul>
             <div class="icons">
-                <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <i class="fa-solid fa-cart-shopping" id="cart-slider-toggle" ></i>
                 <a href="login.html"><i class="fa-solid fa-user"></i></a>
             </div>
           </nav>
@@ -42,7 +167,7 @@
                     <form method="get" action="https://websitedemos.net/brandstore-02/store/">
                         <div class="range-slider">
                             <label for="price-range">Price Range:</label>
-                            <input type="range" id="price-range" name="price-range" min="50" max="290" value="50" step="1">
+                            <input type="range" id="price-range" name="price-range" min="50" max="1500" value="50" step="10">
                             <span class="range-values">
                                 <span class="min-value">$50</span>
                                 <span class="max-value">$290</span>
@@ -53,16 +178,20 @@
                         <h2>Categories</h2>
                         <table class="products_categories">
                             <tr>
-                                <td><p>Accessories</p></td>
-                                <td><p>(7)</p></td>
+                                <td><p class="cat">electronics</p></td>
+                                <td><p class="catCounter">(7)</p></td>
                             </tr>
                             <tr>
-                                <td><p>Men</p></td>
-                                <td><P>(14)</P></td>
+                                <td><p class="cat">jewelery</p></td>
+                                <td><P class="catCounter">(14)</P></td>
                             </tr>
                             <tr>
-                                <td><p>Women</p></td>
-                                <td><p>(17)</p></td>
+                                <td><p class="cat">men's clothing</p></td>
+                                <td><p class="catCounter">(17)</p></td>
+                            </tr>
+                            <tr>
+                                <td><p class="cat">women's clothing</p></td>
+                                <td><p class="catCounter">(17)</p></td>
                             </tr>
                         </table>
                     </div>
@@ -126,99 +255,11 @@
                         </div>
                     </div>
                 </div>
-            
             </td>
-            <td class="p-container">
-                
-                <div class="p-container">
-                    <div class="product-card">
-                        <img src="imgs/product-accessory1-300x300.jpg" alt="Product 1" class="product-image">
-                        <div class="product-name">Bangle Bracelet</div>
-                        <div class="product-category">Accessories</div>
-                        <div class="product-price">$19.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
+            <td class="">
+                <div class="p-container"> <!-- HERE GOES THE PRODUCTS FROM API -->
                     
-                      <div class="product-card">
-                        <img src="imgs/product-accessory2-300x300.jpg" alt="Product 2" class="product-image">
-                        <div class="product-name">Anchor Bracelet</div>
-                        <div class="product-category">Accessories</div>
-                        <div class="product-price">$24.99</div>
-                        <div class="product-stars">★★★★☆</div>
-                      </div>
-                    
-                      
-                      <div class="product-card">
-                        <img src="imgs/product-bag2-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Black Over-the-shoulder Handbag</div>
-                        <div class="product-category">Accessories</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-bag3-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-bag4-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-hoodie1-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-hoodie2-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-w-jeans2-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-w-jeans4-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/sports-shoe4-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/tshirt2-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                      <div class="product-card">
-                        <img src="imgs/product-accessory3-300x300.jpg" alt="Product 3" class="product-image">
-                        <div class="product-name">Product 3 Name</div>
-                        <div class="product-category">Category 3</div>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-stars">★★★★★</div>
-                      </div>
-                    </div>
+                </div>
                 
             </td>
         </tr>
@@ -258,7 +299,7 @@
             </div>
     </footer>
     <!-- End Footer -->
-
+    <script src="js/category.js"></script>
     </body>
 </html>
 

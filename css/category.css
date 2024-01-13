@@ -1,4 +1,6 @@
-
+*{
+  overflow-x: hidden;
+}
 /*
 ---------------------------------------------
 NavBar Section
@@ -185,7 +187,11 @@ footer .container .prim {
 }
 .products_categories p {
     margin-right: 130px;
-
+    cursor: pointer;
+}.products_categories p:hover {
+  margin-right: 130px;
+  cursor: pointer;
+  color: #e44d26;
 }
 .section, .p-container {
     display: table-cell;
@@ -221,6 +227,8 @@ footer .container .prim {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -229,10 +237,10 @@ footer .container .prim {
 }
 
 .product-card img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
     border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 200px;
+    
 }
 
 .product-name {
