@@ -411,12 +411,16 @@ Featured Products Section
   position: relative;
 }
 
+#featured .container .products .product:hover .addToCart {
+  display: block;
+}
+
 #featured .container .products .product img {
   max-width: 100%;
   margin-bottom: 10px;
 }
 
-#featured .container .products .product:hover::after {
+/* #featured .container .products .product:hover::after {
   font-family: "FontAwesome";
   content: "\f290";
   display: flex;
@@ -431,6 +435,43 @@ Featured Products Section
   background-color: #fff;
   box-shadow: 0px 1px 3px 0px;
   cursor: pointer;
+} */
+
+#featured .container .products .product .addToCart {
+  display: none;
+  text-align: center;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 17px;
+  right: 18px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px 0px;
+  cursor: pointer;
+}
+
+#featured .container .products .product .addToCart:hover i {
+  color: #005f9b;
+}
+
+#featured .container .products .product .addToCart:hover::before {
+  font-size: 9px;
+  content: "Add To Cart";
+  position: absolute;
+  left: -64px;
+  top: 5px;
+  width: 172%;
+  height: 33%;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+}
+
+#featured .container .products .product .addToCart i {
+  font-size: 1rem;
 }
 
 #featured .container .products .product h2 {
