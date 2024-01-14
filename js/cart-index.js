@@ -177,7 +177,7 @@ function updateTotals() {
     });
 
     // Update the display of total quantity and total price
-    document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`; // Assuming you want two decimal places
+    document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
 }
 
 
