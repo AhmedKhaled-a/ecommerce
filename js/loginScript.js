@@ -17,6 +17,8 @@ var emailError = document.getElementById("emailError");
 var passwordError = document.getElementById("passwordError");
 var data = JSON.parse(localStorage.getItem("data")) || [];
 
+let userIdCounter = parseInt(localStorage.getItem("userIdCounter")) || 1;
+
 //validate the name input field
 function validateName() {
   var userNameInput = document.getElementById("name");
@@ -30,6 +32,7 @@ function validateName() {
   userNameInput.style.border = "3px solid green";
   return true;
 }
+
 //validate the email input field
 function validateEmail() {
   var userEmailInput = document.getElementById("email");
@@ -83,8 +86,11 @@ document.getElementById("regbtn").addEventListener("click", function (event) {
   var userNameInput = document.getElementById("name");
   var userEmailInput = document.getElementById("email");
   var userPasswdInput = document.getElementById("passwd");
+  const userId = userIdCounter++;
   //push to data
-  data.push({ userName: userNameInput.value , userEmail: userEmailInput.value , userPasswd: userPasswdInput.value });
+  data.push({ userId: userId , userName: userNameInput.value , userEmail: userEmailInput.value , userPasswd: userPasswdInput.value });
+  //save id counter to localstorage
+  localStorage.setItem("userIdCounter", userIdCounter);
   //reset border color after sign-up
   userPasswdInput.style.border = "";
   userEmailInput.style.border = "";
