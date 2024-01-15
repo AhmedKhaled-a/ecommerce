@@ -6,6 +6,7 @@ let Electronics = document.querySelector('.electronics');
 let Jewelery = document.querySelector('.jewelery');
 let Men =document.querySelector('.men');
 let Women= document.querySelector('.women');
+let search=document.querySelector('.search');
 let categoryCounter = document.querySelector('.catCounter');
 getAllProducts(price,maxPrice);
 
@@ -75,4 +76,32 @@ async function getCategory (category) {
     productsContainer.innerHTML=box;
 }
 
+async function searchProducts (match) {
+    var apiresponse = await fetch(`https://fakestoreapi.com/products/`)
+    var finalResult = await apiresponse.json()
+    // console.log(finalResult[0]);
+    let box = '';
+    for (const i of finalResult) {
+        if (i.title.toLowerCase().includes(match.toLowerCase())) {
+        box += `
+            <div class="product-card">
+            <img src="${i.image}">
+            <div>
+            <p class="product-name">${i.title}</p>
+            <p class="product-category">${i.category}</p>
+            <p class="product-price">${i.price}</p>
+            <p class="product-stars">${i.rating.rate}</p>
+            </div>
+          </div>
+            `
+        }
+    }
+    productsContainer.innerHTML=box;
+}
 
+
+
+search.addEventListener('input',()=>{
+    searchProducts(search.value)
+   
+})
