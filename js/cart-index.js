@@ -1,51 +1,37 @@
-const addProduct = document.querySelectorAll('#featured .container .products .product .addToCart');
-const ul = document.querySelector('.items');
+// let addProduct = document.querySelectorAll('.addToCart');
+let allProductsContainer = document.querySelector('.p-container');
+let ul = document.querySelector('.items');
 // the logged in user's data
-// let activeUser = JSON.parse(localStorage.getItem('ListName')) // to get the looged in user from local storage instead of the next line
+let activeUser = JSON.parse(localStorage.getItem('loggedInUser')) // to get the looged in user from local storage instead of the next line
 let totalQuantity = 0;
 let totalPrice = 0;
-let activeUser = {
-    'userId': 2,
-    'userName': 'Mahmoud Ahmed',
-}
-//---------------------------------------------------------------------------
-//----------------------------Ex-List-Of-Users-------------------------------
-//---------------------------------------------------------------------------
-//
-// list of all users signed up with thier cart products
-// let users = [
-//     {
-//         'userId': 1,
-//         'name': "Mahmoud Ahmed", // to save the products of the active login user (activeUser.userId)
-//         'products': [],
-//     },
-//     {
-//         'userId': 2,
-//         'name': "Ahmed Mahmoud",
-//         'products': [],
-//     },
-//     {
-//         'userId': 3,
-//         'name': "Ayman Adel",
-//         'products': [],
-//     },
-// ]
-// localStorage.setItem('users', JSON.stringify(users))
-//
-//---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
-let users = JSON.parse(localStorage.getItem('users'))
+// let loggedInUser = {
+//     'userId': 1,
+//     'userName': 'Mahmoud Ahmed',
+// }
+// console.log(activeUser);
+// localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
+
 let userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];
 
-// load the logged in user items list
-for (let x = 0; x < userCart.length; x++) {
-    if ((activeUser['userId'] == userCart[x]['userId']) && (userCart[x]['products'].length !== 0)) {
-        for(let i = 0; i < userCart[x]['products'].length; i++) {
-            createElement(userCart[x].products[i])
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+
+// load the logged in user items list in the cart
+function loadUserItems() {
+    for (let x = 0; x < userCart.length; x++) {
+        if ((activeUser['userId'] == userCart[x]['userId']) && (userCart[x]['products'].length !== 0)) {
+            for(let i = 0; i < userCart[x]['products'].length; i++) {
+                createElement(userCart[x].products[i])
+            }
         }
     }
 }
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 
 // create li element for the product
 function createElement(productObj) {
@@ -91,15 +77,20 @@ function createElement(productObj) {
     updateTotals();
 }
 
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 
-// get product info. when clicking on add to cart button
-addProduct.forEach((btn) => {
-    btn.addEventListener('click', function () {
-        let product = btn.parentElement;
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+
+function addToCart(product) {
         let pId = product.id;
         let pName = product.querySelector('h2').textContent;
         let pImg = product.querySelector('img').src;
-        let pPrice = product.querySelector('.price').textContent.slice(1); // price without $ sign
+        let pPrice = product.querySelector('.price').textContent; // price without $ sign .slice(1)
         let pQuantinty = 1
 
         let productObj = {
@@ -116,20 +107,20 @@ addProduct.forEach((btn) => {
         let found = false; // a flag to indicate if the user is found in the userCart array
         for (let x = 0; x < userCart.length; x++) {
             if (activeUser.userId === userCart[x]['userId']) { // if the user is found, check product and update quantity if the same product exists
-                // check if the product exists += the quantinty by one
                 let allItems = document.querySelectorAll('li.item');
                 // convert the NodeList to an array
                 let allItemsArray = [...allItems];
                 let item = allItemsArray.find(item => item.id === productObj.productId);
 
 
-                if (item) { // if the item exists
+                if (item) { // if the item exists in the cart increase the quantity and the total price
                     for (let i = 0; i < userCart[x].products.length; i++) {
                         if (userCart[x].products[i].productId == item.id) {
                             item.querySelector('.item-price').innerHTML = `<span class="item-quantity">${userCart[x].products[i].productQuantity+1}</span> x $<span class="final-price">${productObj.productPrice}</span>`;
                         }
                     }
 
+                    // if the item exists in the cart increase the quantity in the localsotrage item 'userCart'
                     for (let i = 0; i < userCart.length; i++) {
                         if (userCart[i].userId === activeUser.userId) {
                             for (let x = 0; x < userCart[i].products.length; x++) {
@@ -139,7 +130,7 @@ addProduct.forEach((btn) => {
                             }
                         }
                     }
-                } else { // if the item does not exist
+                } else { // if the item does not exist in the cart then create new one
                     userCart[x].products.push(productObj);
                     createElement(productObj)
                 }
@@ -155,9 +146,33 @@ addProduct.forEach((btn) => {
         // update the userCart data in the localStorage
         localStorage.setItem('userCart', JSON.stringify(userCart));
         updateTotals()
-    })
+    
+}
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+
+// no need to add any code in the category file (delegation)
+allProductsContainer.addEventListener('click', function(e) {
+    if (e.target.matches('.fa-solid.fa-bag-shopping')) { //? check the class agian after the final design to confirm it will be 'i' = '.fa-solid.fa-bag-shopping' or 'button' = '.addToCart'
+        let product = e.target.parentElement.parentElement;
+        addToCart(product);
+    }
 })
 
+// add this code if we wanna to work without delegation
+// const addProduct = document.querySelectorAll('.addToCart');
+// addProduct.forEach((btn) => {
+//     btn.addEventListener('click', function () {
+//         let product = btn.parentElement;
+//         addToCart(product);
+//     });
+// });
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 
 // Function to update total quantity and total price
 function updateTotals() {
@@ -180,6 +195,9 @@ function updateTotals() {
     document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
 }
 
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 
 // Delete Item Button
 const sidebarItemsContainer = document.querySelector('.sidebar-items');
@@ -205,3 +223,15 @@ sidebarItemsContainer.addEventListener('click', function(event) {
     }
     updateTotals();
 });
+
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+
+// Initialize the shopping cart
+function initShoppingCart() {
+    loadUserItems();
+    updateTotals();
+}
+
+initShoppingCart();
