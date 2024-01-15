@@ -139,6 +139,13 @@
     </section>
 <!-- SIDEBAR END -->
 
+<!--start logout popup-->
+<div id="loggedInPopup" class="popup">
+    <p>Welcome, <span id="loggedInUserName"></span>!</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+<!--END logout popup-->
+
     <!-- start Nav Section -->
         <header>
             <nav>
@@ -155,7 +162,7 @@
                 </ul>
                 <div class="icons">
                     <i class="fa-solid fa-cart-shopping" id="cart-slider-toggle" ></i>
-                    <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                    <a  id="userIcon"><i class="fa-solid fa-user"></i></a>
                 </div>
               </nav>
         </header>
@@ -395,5 +402,6 @@
     
     <script src="./js/script.js"></script>
     <script src="./js/cart-index.js"></script>
+    <script src="./js/logoutscript.js"></script>
 </body>
 </html>
