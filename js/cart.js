@@ -195,10 +195,15 @@ function setLocalStr() {
     localStorage.setItem("userCart" , JSON.stringify(userCart));
 }
 
+function getLoggedInUser() {
+    let userId = JSON.parse(localStorage.getItem("loggedInUser")).userId;
+    return userId;
+
+}
+
 function init() {
     getFromLocalStorage();
-    // console.log(userCart);
-    renderProducts(2); // 2 for userId
+    renderProducts(getLoggedInUser()); 
 }
 
 
