@@ -15,6 +15,8 @@ logBtn.addEventListener("click", () => {
 var nameError = document.getElementById("nameError");
 var emailError = document.getElementById("emailError");
 var passwordError = document.getElementById("passwordError");
+var logInError = document.getElementById("logInError");
+
 var data = JSON.parse(localStorage.getItem("data")) || [];
 
 let userIdCounter = parseInt(localStorage.getItem("userIdCounter")) || 1;
@@ -101,4 +103,25 @@ document.getElementById("regbtn").addEventListener("click", function (event) {
   document.querySelector("form").reset();
   //switch to sign-in form if the sign-up is done
   container.classList.remove("active");
+});
+
+document.getElementById("inbtn").addEventListener("click", function(event) {
+  event.preventDefault();
+  var logMailInput = document.getElementById("logMail");
+  var logPassInput = document.getElementById("logPass");
+
+  var storedData = JSON.parse(localStorage.getItem("data")) || [];
+
+  var loginUser = storedData.find(function (user) {
+    return user.userEmail === logMailInput.value;
+  });
+
+  if (loginUser && loginUser.userPasswd === logPassInput.value) {
+    alert("Login successful!");
+    localStorage.setItem("loggedInUser", JSON.stringify(loginUser));
+    window.location.href = "index.html";
+  } else {
+    logInError.innerHTML = "The Email or password you enterd is incorrect";
+  }
+  document.querySelector("#loginForm").reset();
 });
