@@ -20,7 +20,7 @@
             </div>
             <ul class="nav-links">
               <li class="home"><a href="index.html">Home</a></li>
-              <li class="store"><a href="#">Store</a></li>
+              <li class="store"><a href="category.html">Store</a></li>
               <li class="about"><a href="about.html">About</a></li>
               <li class="contact"><a href="contact-us.html">Contact-us</a></li>
             </ul>
@@ -37,10 +37,13 @@
         <div class="form-container sign-up ">
             <form>
                 <h1>Create Account</h1>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="E-Mail">
-                <input type="password" placeholder="Password">
-                <button>Sign-Up</button>
+                <input type="text" placeholder="Name" id="name" onkeyup="validateName()">
+                <span id="nameError"></span>
+                <input type="email" placeholder="E-Mail" id="email" onkeyup="validateEmail()">
+                <span id="emailError"></span>
+                <input type="password" placeholder="Password" id="passwd" onkeyup="validatePassword()">
+                <span id="passwordError"></span>
+                <button id="regbtn">Sign-Up</button>
             </form>
         </div>
         <div class="form-container sign-in ">
@@ -49,7 +52,7 @@
                 <input type="email" placeholder="E-Mail">
                 <input type="password" placeholder="Password">
                 <a href="#">Forgot your password ?</a>
-                <button>Sign-In</Sign-IN></button>
+                <button itemid="inbtn">Sign-In</Sign-IN></button>
             </form>
         </div>
         <div class="toggle-container">

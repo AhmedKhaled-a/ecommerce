@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="./css/all.min.css" type="text/css">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/style.css" type="text/css">
-    <link rel="stylesheet" href="./css/cart.css">
     <title>Home - Ecommerce</title>
 </head>
 <body>
@@ -36,7 +35,7 @@
 
     <section class="sidebar-items">
         <ul class="items">
-            <li class="item">
+            <!-- <li class="item">
                 <img src="imgs/product-accessory2-300x300.jpg" alt="">
                 <div class="item-desc">
                     <span class="item-name">Anchor Bracelet - Black</span>
@@ -125,14 +124,14 @@
                 <div class="delete-item-btn">
                     <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </section>
 
     <footer class="sidebar-footer">
         <div class="price-subtotal">
             <span>Subtotal:</span>
-            <span>$350.00</span>
+            <span id="total-price">$0.00</span>
         </div>
         <button class="view-btn"><a href="./cart.html">VIEW CART</a></button>
         
@@ -150,7 +149,7 @@
                 </div>
                 <ul class="nav-links">
                   <li class="home"><a href="#">Home</a></li>
-                  <li class="store"><a href="#">Store</a></li>
+                  <li class="store"><a href="category.html">Store</a></li>
                   <li class="about"><a href="about.html">About</a></li>
                   <li class="contact"><a href="contact-us.html">Contact-us</a></li>
                 </ul>
@@ -207,74 +206,84 @@
             <div class="line"></div>
 
             <div class="products">
-                <div class="product">
+                <div class="product" id="1">
                     <img src="./imgs/product-1.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="2">
                     <img src="./imgs/product-2.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="3">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="4">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="5">
                     <img src="./imgs/product-7.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="6">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="7">
                     <img src="./imgs/product-4.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="8">
                     <img src="./imgs/product-5.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="9">
                     <img src="./imgs/product-6.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product">
+                <div class="product" id="10">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
                     <div class="price">$120.00</div>
+                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
             </div>
         </div>
@@ -385,5 +394,6 @@
     <!-- End Links Below Footer -->
     
     <script src="./js/script.js"></script>
+    <script src="./js/cart-index.js"></script>
 </body>
 </html>
