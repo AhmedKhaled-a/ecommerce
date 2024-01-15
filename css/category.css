@@ -229,7 +229,7 @@ footer .container .prim {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-
+    position: relative;
 }
 
 .product-card:hover {
@@ -243,25 +243,25 @@ footer .container .prim {
     
 }
 
-.product-name {
+.product-card .product-name {
     font-weight: bold;
     margin-top: 10px;
     text-align: left;
 }
 
-.product-category {
+.product-card .product-category {
     color: #555;
     margin-top: 5px;
     text-align: left;
 }
 
-.product-price {
+.product-card .price {
     color: #e44d26;
     font-size: 18px;
     margin-top: 5px;
 }
 
-.product-stars {
+.product-card .product-stars {
     color: #ffd700;
     margin-top: 5px;
 }

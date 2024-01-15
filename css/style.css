@@ -411,7 +411,8 @@ Featured Products Section
   position: relative;
 }
 
-#featured .container .products .product:hover .addToCart {
+#featured .container .products .product:hover .addToCart,
+.product-card:hover .addToCart{
   display: block;
 }
 
@@ -437,7 +438,8 @@ Featured Products Section
   cursor: pointer;
 } */
 
-#featured .container .products .product .addToCart {
+#featured .container .products .product .addToCart,
+.product-card .addToCart {
   display: none;
   text-align: center;
   position: absolute;
@@ -453,11 +455,13 @@ Featured Products Section
   cursor: pointer;
 }
 
-#featured .container .products .product .addToCart:hover i {
+#featured .container .products .product .addToCart:hover i,
+.product-card .addToCart:hover i {
   color: #005f9b;
 }
 
-#featured .container .products .product .addToCart:hover::before {
+#featured .container .products .product .addToCart:hover::before,
+.product-card .addToCart:hover::before {
   font-size: 9px;
   content: "Add To Cart";
   position: absolute;
@@ -470,7 +474,8 @@ Featured Products Section
   padding: 5px;
 }
 
-#featured .container .products .product .addToCart i {
+#featured .container .products .product .addToCart i,
+.product-card .addToCart i{
   font-size: 1rem;
 }
 

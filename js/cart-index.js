@@ -1,4 +1,7 @@
-const addProduct = document.querySelectorAll('#featured .container .products .product .addToCart');
+document.addEventListener('DOMContentLoaded',()=>{
+}
+)
+let addProduct = document.querySelectorAll('.addToCart');
 const ul = document.querySelector('.items');
 // the logged in user's data
 // let activeUser = JSON.parse(localStorage.getItem('ListName')) // to get the looged in user from local storage instead of the next line
@@ -86,7 +89,6 @@ function createElement(productObj) {
     cartLi.appendChild(cartImg);
     cartLi.appendChild(cartDiv);
     cartLi.appendChild(cartDeleteBtn);
-
     ul.appendChild(cartLi);
     updateTotals();
 }
