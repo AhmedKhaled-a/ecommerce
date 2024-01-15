@@ -73,6 +73,21 @@ a {
 .products td i {
     color: #54595F;
     cursor: pointer;
+    pointer-events:all;
+    width: 2em;
+    height: 2em;
+    
+    /* outline: none; */
+    /* pointer-events: none; */
+}
+
+.products td i::before {
+    pointer-events: all;
+    content: "X";
+    z-index: -100px;
+    width: 2em;
+    height: 2em;
+    position: relative;
 }
 
 .updateButton {
