@@ -278,6 +278,12 @@ button:hover{
     #passwordError{
         color: black;
         font-size: 15px;
+        font-weight: bold;
+    }
+    #logInError{
+        color: red;
+        font-size: 15px;
+        padding-top: 20px;
     }
     /*
     -------------------------------------
