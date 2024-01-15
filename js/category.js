@@ -40,14 +40,15 @@ async function getAllProducts (price,maxPrice) {
         if(i.price >= price && i.price < maxPrice)
         {
             box += `
-            <div class="product-card">
-            <img src="${i.image}">
-            <div>
-            <p class="product-name">${i.title}</p>
-            <p class="product-category">${i.category}</p>
-            <p class="product-price">${i.price}</p>
-            <p class="product-stars">${i.rating.rate}</p>
-            </div>
+            <div class="product-card" id='${i.id}'>
+                <img src="${i.image}">
+                <div>
+                    <h2 class="product-name">${i.title}</h2>
+                    <p class="product-category">${i.category}</p>
+                    <p class="price">${i.price}</p>
+                    <p class="product-stars">${i.rating.rate}</p>
+                </div>
+                <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
           </div>
             `
         }
@@ -62,46 +63,19 @@ async function getCategory (category) {
     let box = '';
     for (const i of finalResult) {
         box += `
-            <div class="product-card">
+        <div class="product-card" id='${i.id}'>
             <img src="${i.image}">
             <div>
-            <p class="product-name">${i.title}</p>
-            <p class="product-category">${i.category}</p>
-            <p class="product-price">${i.price}</p>
-            <p class="product-stars">${i.rating.rate}</p>
+                <h2 class="product-name">${i.title}</h2>
+                <p class="product-category">${i.category}</p>
+                <p class="price">${i.price}</p>
+                <p class="product-stars">${i.rating.rate}</p>
             </div>
-          </div>
+            <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+        </div>
             `
     }
     productsContainer.innerHTML=box;
 }
 
-async function searchProducts (match) {
-    var apiresponse = await fetch(`https://fakestoreapi.com/products/`)
-    var finalResult = await apiresponse.json()
-    // console.log(finalResult[0]);
-    let box = '';
-    for (const i of finalResult) {
-        if (i.title.toLowerCase().includes(match.toLowerCase())) {
-        box += `
-            <div class="product-card">
-            <img src="${i.image}">
-            <div>
-            <p class="product-name">${i.title}</p>
-            <p class="product-category">${i.category}</p>
-            <p class="product-price">${i.price}</p>
-            <p class="product-stars">${i.rating.rate}</p>
-            </div>
-          </div>
-            `
-        }
-    }
-    productsContainer.innerHTML=box;
-}
 
-
-
-search.addEventListener('input',()=>{
-    searchProducts(search.value)
-   
-})
