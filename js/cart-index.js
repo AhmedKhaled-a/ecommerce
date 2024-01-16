@@ -1,18 +1,11 @@
-// let addProduct = document.querySelectorAll('.addToCart');
 let allProductsContainer = document.querySelector('.p-container');
 let ul = document.querySelector('.items');
 // the logged in user's data
-let activeUser = JSON.parse(localStorage.getItem('loggedInUser')) // to get the looged in user from local storage instead of the next line
+let activeUser = JSON.parse(localStorage.getItem('loggedInUser'))
+let userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];
 let totalQuantity = 0;
 let totalPrice = 0;
-// let loggedInUser = {
-//     'userId': 1,
-//     'userName': 'Mahmoud Ahmed',
-// }
-// console.log(activeUser);
-// localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
 
-let userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];
 
 // ---------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -155,20 +148,19 @@ function addToCart(product) {
 
 // no need to add any code in the category file (delegation)
 allProductsContainer.addEventListener('click', function(e) {
-    if (e.target.matches('.fa-solid.fa-bag-shopping')) { //? check the class agian after the final design to confirm it will be 'i' = '.fa-solid.fa-bag-shopping' or 'button' = '.addToCart'
+    if (e.target.matches('.fa-solid.fa-bag-shopping')) {
         let product = e.target.parentElement.parentElement;
+        addToCart(product);
+    } else if (e.target.matches('.addToCart')) {
+        let product = e.target.parentElement;
         addToCart(product);
     }
 })
 
-// add this code if we wanna to work without delegation
-// const addProduct = document.querySelectorAll('.addToCart');
-// addProduct.forEach((btn) => {
-//     btn.addEventListener('click', function () {
-//         let product = btn.parentElement;
-//         addToCart(product);
-//     });
-// });
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+
 
 // ---------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------
@@ -230,8 +222,10 @@ sidebarItemsContainer.addEventListener('click', function(event) {
 
 // Initialize the shopping cart
 function initShoppingCart() {
-    loadUserItems();
-    updateTotals();
+    if (activeUser) {
+        loadUserItems();
+        updateTotals();
+    }
 }
 
 initShoppingCart();

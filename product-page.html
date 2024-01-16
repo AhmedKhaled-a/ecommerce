@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <!-- Font Aewsome Library -->
+    <link rel="stylesheet" href="./css/all.min.css" type="text/css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/product-page.css" type="text/css">
+    <title>Product</title>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <section class="sidebar closed">
+        <header>
+            <div class="image-text">
+                <span class="image">  
+                    <img src="imgs/logo.png" alt="">
+                </span>
+    
+                <div class="text header-text">
+                    <span>ShoppingCart</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
+                </div>
+            </div>
+        </header>
+    
+        <section class="sidebar-items">
+            <ul class="items">
+            </ul>
+        </section>
+    
+        <footer class="sidebar-footer">
+            <div class="price-subtotal">
+                <span>Subtotal:</span>
+                <span id="total-price">$0.00</span>
+            </div>
+            <button class="view-btn"><a href="./cart.html">VIEW CART</a></button>
+            
+        </footer>
+    </section>
+    <!-- SIDEBAR END -->
+    
+    <!--start logout popup-->
+    <div id="loggedInPopup" class="popup">
+        <p>Welcome, <span id="loggedInUserName"></span>!</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <!--END logout popup-->
+    
+    <!-- start Nav Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                <img src="imgs/logo1-free-img-140x47.png" alt="Logo" >
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li class="home"><a href="./index.html">Home</a></li>
+                <li class="store"><a href="category.html">Store</a></li>
+                <li class="about"><a href="about.html">About</a></li>
+                <li class="contact"><a href="contact-us.html">Contact-us</a></li>
+            </ul>
+            <div class="icons">
+                <i class="fa-solid fa-cart-shopping" id="cart-slider-toggle" ></i>
+                <a  id="userIcon"><i class="fa-solid fa-user"></i></a>
+            </div>
+            </nav>
+    </header>
+    <!-- End Nav Section -->
+    
+    <!-- Start Product Details -->
+    <div class="product-container p-container">
+        <div class="product-card">
+            <img src="">
+            <div>
+                <h2 class="product-name"></h2>
+                <p class="product-category"></p>
+                <p class="desc"></p>
+                <div class="price-txt">
+                    <p>price:</p>
+                    <p class="price"></p>
+                </div>
+                
+                <p class="product-stars"></p>
+            </div>
+            <button class="addToCart cartBtn">Add To Cart</button>
+      </div>
+    </div>
+    <!-- End Product Details -->
+
+    <!-- Start Footer -->
+    <footer>
+        <div class="container">
+            <div class="prim">
+                <div class="slogan">
+                    <img src="./imgs/logo.png" alt="Logo">
+                    <h3>The best look anytime, anywhere.</h3>
+                </div>
+    
+                <div class="for-her">
+                    <h2>For Her</h2>
+                    <a href="javascript:;">Women Jeans</a>
+                    <a href="javascript:;">Tops and Shirts</a>
+                    <a href="javascript:;">Women Jackets</a>
+                    <a href="javascript:;">Heels and Flats</a>
+                    <a href="javascript:;">Women Accessories</a>
+                </div>
+    
+                <div class="for-him">
+                    <h2>For Him</h2>
+                    <a href="javascript:;">Men Jeans</a>
+                    <a href="javascript:;">Men Shirts</a>
+                    <a href="javascript:;">Men Shoes</a>
+                    <a href="javascript:;">Men Accessories</a>
+                    <a href="javascript:;">Men Jackets</a>
+                </div>
+    
+                <div class="sub">
+                    <h2>Subscribe</h2>
+                    <input type="email" placeholder="Your email address..." name="emailBox" id="emailBox">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+    </footer>
+    <!-- End Footer -->
+    
+    <!-- Start Links Below Footer -->
+    <section id="links">
+        <div class="container">
+            <p>Copyright © 2024 ITI. Powered by PHP Track.</p>
+            <div class="icons">
+                <a href="javascript:;"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-youtube"></i></a>
+                <a href="javascript:;"><i class="fa-brands fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- End Links Below Footer -->
+
+    <script>
+        let productContainer = document.querySelector('.product-card')
+        let img = document.querySelector('.product-container img');
+        let title = document.querySelector('.product-name');
+        let desc = document.querySelector('.desc');
+        let price = document.querySelector('.price');
+        let rate = document.querySelector('.product-stars');
+
+        let params = new URLSearchParams(location.search);
+        let productDetails = JSON.parse(params.get('productDetails'));
+
+        productContainer.setAttribute('id', params.get('productId'))
+        document.title = productDetails['title'];
+        img.src = productDetails.image;
+        title.textContent = productDetails.title;
+        desc.textContent = productDetails.description;
+        price.textContent = `${productDetails.price}`;
+        rate.innerHTML = productDetails.rating + `<i class="fa-solid fa-star"></i>`.repeat(Math.round(productDetails.rating));
+    </script>
+    <script src="./js/cart-index.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
