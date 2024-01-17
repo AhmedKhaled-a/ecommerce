@@ -139,6 +139,7 @@ function addToCart(product) {
         // update the userCart data in the localStorage
         localStorage.setItem('userCart', JSON.stringify(userCart));
         updateTotals()
+        updateCartNumber()
     
 }
 
@@ -214,11 +215,19 @@ sidebarItemsContainer.addEventListener('click', function(event) {
         }
     }
     updateTotals();
+    updateCartNumber()
 });
 
 // ---------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------
+function updateCartNumber() {
+    let items = document.querySelector('ul.items');
+    let counter = items.getElementsByTagName('li');
+    let icon = document.querySelector('i.fa-solid.fa-cart-shopping')
+    icon.setAttribute('value', counter.length)
+}
+
 
 // Initialize the shopping cart
 function initShoppingCart() {
@@ -226,6 +235,7 @@ function initShoppingCart() {
         loadUserItems();
         updateTotals();
     }
+    updateCartNumber()
 }
 
 initShoppingCart();

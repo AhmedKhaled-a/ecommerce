@@ -12,27 +12,29 @@ async function getProductPage(event) {
     }
 
     // Get Product Details
-    async function productDetails(id) {
-        var response = await fetch(`https://fakestoreapi.com/products/${id}`)
-        var result = await response.json()
-
-        return productDetails = {
-            'image': result.image,
-            'title': result.title,
-            'description': result.description,
-            'price': result.price,
-            'category': result.category,
-            'rating': result.rating.rate,
-        }
-    }
+    if (productId) {
+        async function productDetails(id) {
+            var response = await fetch(`https://fakestoreapi.com/products/${id}`)
+            var result = await response.json()
     
-    // add the product details with the url
-    let params = new URLSearchParams();
-    let details = await productDetails(productId);
-
-    params.append('productId', productId);
-    params.append('productDetails', JSON.stringify(details))
-    location.assign('../product-page.html?' + params.toString())
+            return productDetails = {
+                'image': result.image,
+                'title': result.title,
+                'description': result.description,
+                'price': result.price,
+                'category': result.category,
+                'rating': result.rating.rate,
+            }
+        }
+        
+        // add the product details with the url
+        let params = new URLSearchParams();
+        let details = await productDetails(productId);
+    
+        params.append('productId', productId);
+        params.append('productDetails', JSON.stringify(details))
+        location.assign('../product-page.html?' + params.toString())
+    }
 }
 
 allProductsContainer.addEventListener('click', function(e) {

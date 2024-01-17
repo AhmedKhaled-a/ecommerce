@@ -41,22 +41,27 @@ body {
     margin-top: 15px;
 }
 
-.product-container .product-card  .price-txt {
+.product-container .product-card .price-txt {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 30px;
+    width: 200px;
+    padding: 0;
 }
 
 .product-container .product-card p:first-of-type {
-    margin-right: 20px;
     font-size: 1.3rem;
 }
 
-.product-container .product-card  .price-txt
 .product-container .product-card .product-stars {
     margin-top: 20px;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    width: 200px;
 }
 
 .product-container .product-card .product-stars i {
