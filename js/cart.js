@@ -2,6 +2,7 @@ const tableBody = document.querySelector("tbody");
 const totalCalculated = document.getElementById("totalCalc");
 // console.log(tableBody);
 
+
 let userCart = [] // TODO: get from Local Storage
 
 function renderProducts(usrID) {
@@ -138,14 +139,15 @@ function updateProduct(e, usrID) {
 
     // update subtotal and total
 
-    currentSubTotal.innerHTML = val * price;
+    // round to two decimal points
+    currentSubTotal.innerHTML = (val * price).toFixed(2);;
     updateTotalPrice();
 }
 
 function removeProduct(e, usrID) {
     // console.log("here");
     let productRow = e.target.parentNode.parentNode;
-    console.log(productRow);
+    // console.log(productRow);
     let productId = productRow.getAttribute("id");
     // remove
     userCart.every((userProducts) => {
@@ -171,6 +173,31 @@ function removeProduct(e, usrID) {
 
     
 }
+function checkOut() {
+    let usrID = getLoggedInUser();
+    // alert
+    alert("You Checked Out");
+    // empty cart
+    userCart.every((userProducts) => {
+        if(Number(userProducts.userId) == usrID) {
+            userProducts.products = []; // empty cart
+            return false ;
+        }
+        else {
+            return true;
+        }
+
+    });
+
+    setLocalStr();
+
+
+
+    // go to index
+    window.location.replace("./index.html");
+}
+
+
 
 function updateTotalPrice() {
     let allSubTotals = document.querySelectorAll(".subtotal");
@@ -186,6 +213,8 @@ function updateTotalPrice() {
 
 }
 
+
+
 function setLocalStr() {
     localStorage.setItem("userCart" , JSON.stringify(userCart));
 }
@@ -195,6 +224,7 @@ function getLoggedInUser() {
     return userId;
 
 }
+
 
 function init() {
     getFromLocalStorage();
