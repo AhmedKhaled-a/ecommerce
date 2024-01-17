@@ -106,11 +106,10 @@ function updateProduct(e, usrID) {
     let val = e.target.value;
     let productRow = e.target.parentNode.parentNode;
     let productId = productRow.getAttribute("id");
-    console.log(productId);
+    // console.log(productId);
     let currentSubTotal = e.target.parentNode.nextElementSibling;
     // let allSubTotals = document.querySelectorAll(".subtotal");
     let price = 0;
-    let total = 0;
     // console.log(currentSubTotal);
 
 
@@ -120,7 +119,7 @@ function updateProduct(e, usrID) {
             // update value
 
             userProducts.products.every((product) => {
-                // console.log(product);
+                console.log(product);
                 if(productId == product.productId) {
                     product.productQuantity = val;
                     price = product.productPrice;
@@ -140,11 +139,7 @@ function updateProduct(e, usrID) {
     // update subtotal and total
 
     currentSubTotal.innerHTML = val * price;
-
     updateTotalPrice();
-
-
-
 }
 
 function removeProduct(e, usrID) {
