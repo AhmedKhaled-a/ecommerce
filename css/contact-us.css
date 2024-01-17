@@ -3,9 +3,9 @@ html, body, * {
     padding: 0;
     box-sizing: border-box;
     font-family: "Lato" sans-serif;
-    font-size: 1vw;
 }
 main {
+    font-size: 1.6vw;
     width: 100%;
     background-color: #f5f7f9;
 }
