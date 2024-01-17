@@ -115,7 +115,7 @@ html {
   min-width: 60px;
   display: flex;
   align-items: center;
-} 
+}
 
 /* sidebar items */
 
@@ -124,6 +124,7 @@ html {
 }
 .sidebar-items .items {
   padding: 0;
+  margin-bottom: 150px;
 }
 .sidebar-items .item img {
   width: 70px;
@@ -154,32 +155,49 @@ html {
   color: #626161;
 }
 
+.sidebar-items .delete-item-btn i {
+  font-size: 1.3rem;
+}
+
+.sidebar-items .delete-item-btn:hover i,
+.sidebar .toggle-sidebar:hover {
+  color: #62616181;
+}
+
 /* sidebar footer */
 
 .sidebar .sidebar-footer {
-  position: sticky;
+  position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 700px;
   background-color: #FFF;
   font-size: large;
   font-weight: 600;
+  color: #FFF;
 }
 .sidebar  .price-subtotal {
   display: flex;
   /* background-color: #6979d3; */
   justify-content: space-between;
-  
   padding: 10px;
-  background-color: #6979d3;
+  background-color: #005f9b;
 }
 
 .sidebar .sidebar-footer .view-btn {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  background-color: #6979d3;
+  background-color: #005f9b;
   border: none;
   font-weight: 600;
+}
+
+.sidebar .sidebar-footer .view-btn a {
+  color: #FFF;
+}
+
+.sidebar .sidebar-footer .view-btn a:hover {
+  color: #ffffffaf;
 }
 /* SIDEBAR END 
 ---------------------------------------------
@@ -240,7 +258,7 @@ nav a {
 .icons a:link{
     color: white;
 }
-a:visited {
+nav a:visited {
   color: inherit;
 }
 .icons {
@@ -251,17 +269,34 @@ a:visited {
 
 .fa-solid{
     font-size: 30px;
-  }
-  .icons i {
-    padding: 15px;
-    transition: transform 0.5s, color 0.4s;
-    cursor: pointer;
-  }
-  
-  .icons i:hover {
-    color: #ffc107;
-    transform: scale(1.4);
-  }
+}
+.icons i {
+  padding: 15px;
+  transition: transform 0.5s, color 0.4s;
+  cursor: pointer;
+  position: relative;
+}
+
+.icons i:hover {
+  color: #ffc107;
+  transform: scale(1.4);
+}
+
+.icons .fa-cart-shopping::after {
+  content: attr(value);
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: .9rem;
+  background-color: #0084d6;
+  position: absolute;
+  top: 1px;
+  right: 7px;
+}
 /* 
 ---------------------------------------------
 Hero Section
