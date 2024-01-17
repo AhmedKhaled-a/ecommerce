@@ -139,6 +139,13 @@
     </section>
 <!-- SIDEBAR END -->
 
+<!--start logout popup-->
+<div id="loggedInPopup" class="popup">
+    <p>Welcome, <span id="loggedInUserName"></span>!</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+<!--END logout popup-->
+
     <!-- start Nav Section -->
         <header>
             <nav>
@@ -155,7 +162,7 @@
                 </ul>
                 <div class="icons">
                     <i class="fa-solid fa-cart-shopping" id="cart-slider-toggle" ></i>
-                    <a href="login.html"><i class="fa-solid fa-user"></i></a>
+                    <a  id="userIcon"><i class="fa-solid fa-user"></i></a>
                 </div>
               </nav>
         </header>
@@ -205,84 +212,84 @@
             <h2>featured products</h2>
             <div class="line"></div>
 
-            <div class="products">
-                <div class="product" id="1">
+            <div class="products p-container">
+                <div class="product" id="100">
                     <img src="./imgs/product-1.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="2">
+                <div class="product" id="200">
                     <img src="./imgs/product-2.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="3">
+                <div class="product" id="300">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="4">
+                <div class="product" id="400">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="5">
+                <div class="product" id="500">
                     <img src="./imgs/product-7.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="6">
+                <div class="product" id="600">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="7">
+                <div class="product" id="700">
                     <img src="./imgs/product-4.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="8">
+                <div class="product" id="800">
                     <img src="./imgs/product-5.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="9">
+                <div class="product" id="900">
                     <img src="./imgs/product-6.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
 
-                <div class="product" id="10">
+                <div class="product" id="1000">
                     <img src="./imgs/product-3.jpg" alt="Shoes">
                     <h2>DNK Yellow Shoes</h2>
                     <p class="catg">Men</p>
-                    <div class="price">$120.00</div>
+                    <div class="price">120.00</div>
                     <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
             </div>
@@ -395,5 +402,6 @@
     
     <script src="./js/script.js"></script>
     <script src="./js/cart-index.js"></script>
+    <script src="./js/logoutscript.js"></script>
 </body>
 </html>

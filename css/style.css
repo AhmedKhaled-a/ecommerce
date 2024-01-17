@@ -412,7 +412,7 @@ Featured Products Section
 }
 
 #featured .container .products .product:hover .addToCart,
-.product-card:hover .addToCart{
+.product-card:hover .addToCart {
   display: block;
 }
 
@@ -461,25 +461,26 @@ Featured Products Section
 }
 
 #featured .container .products .product .addToCart:hover::before,
-.product-card .addToCart:hover::before {
-  font-size: 9px;
+.product-card .addToCart:hover::before  {
   content: "Add To Cart";
   position: absolute;
   left: -64px;
   top: 5px;
   width: 172%;
   height: 33%;
+  font-size: 9px;
   background-color: #000;
   color: #fff;
   padding: 5px;
 }
 
 #featured .container .products .product .addToCart i,
-.product-card .addToCart i{
-  font-size: 1rem;
+.product-card .addToCart i {
+  font-size: 1.2rem;
 }
 
-#featured .container .products .product h2 {
+#featured .container .products .product h2,
+.product-card h2 {
   font-size: 0.9rem;
 }
 
@@ -490,7 +491,8 @@ Featured Products Section
   text-transform: capitalize;
 }
 
-#featured .container .products .product .price {
+#featured .container .products .product .price,
+.product-card .price{
   font-size: 0.95rem;
 }
 
@@ -1071,5 +1073,37 @@ Extra Large Devices
   #tags .container .tag-box img {
     max-width: 20%;
   }
+}
+
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 16%;
+  right: 0;
+  transform: translate(-5%, -50%);
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+#loggedInPopup button {
+  background-color: #ff5252; 
+  color: #fff; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.4s;
+  margin-top: 15px;
+}
+
+#loggedInPopup button:hover {
+  background-color: #e00000; 
 }
 

@@ -6,6 +6,7 @@ let Electronics = document.querySelector('.electronics');
 let Jewelery = document.querySelector('.jewelery');
 let Men =document.querySelector('.men');
 let Women= document.querySelector('.women');
+let search=document.querySelector('.search');
 let categoryCounter = document.querySelector('.catCounter');
 getAllProducts(price,maxPrice);
 
@@ -39,15 +40,15 @@ async function getAllProducts (price,maxPrice) {
         if(i.price >= price && i.price < maxPrice)
         {
             box += `
-            <div class="product-card" id="${i.id}">
+            <div class="product-card" id='${i.id}'>
                 <img src="${i.image}">
-                    <div>
-                        <h2 class="product-name">${i.title}</h2>
-                        <p class="product-category">${i.category}</p>
-                        <p class="price">${i.price}</p>
-                        <p class="product-stars">${i.rating.rate}</p>
-                    </div>
-                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+                <div>
+                    <h2 class="product-name">${i.title}</h2>
+                    <p class="product-category">${i.category}</p>
+                    <p class="price">${i.price}</p>
+                    <p class="product-stars">${i.rating.rate}</p>
+                </div>
+                <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
           </div>
             `
         }
@@ -63,20 +64,47 @@ async function getCategory (category) {
     let box = '';
     for (const i of finalResult) {
         box += `
-            <div class="product-card" id="${i.id}">
-                <img src="${i.image}">
-                    <div>
-                        <h2 class="product-name">${i.title}</h2>
-                        <p class="product-category">${i.category}</p>
-                        <p class="price">${i.price}</p>
-                        <p class="product-stars">${i.rating.rate}</p>
-                    </div>
-                    <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
-          </div>
+        <div class="product-card" id='${i.id}'>
+            <img src="${i.image}">
+            <div>
+                <h2 class="product-name">${i.title}</h2>
+                <p class="product-category">${i.category}</p>
+                <p class="price">${i.price}</p>
+                <p class="product-stars">${i.rating.rate}</p>
+            </div>
+            <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+        </div>
             `
     }
     productsContainer.innerHTML=box;
     document.querySelectorAll('.addToCart');
 }
 
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+async function searchProduct (match) {
+    var apiresponse = await fetch(`https://fakestoreapi.com/products/`)
+    var finalResult = await apiresponse.json()
+    // console.log(finalResult[0]);
+    let box = '';
+    for (const i of finalResult) {
+        if(i.title.toLowerCase().includes(match.toLowerCase())){
+
+        
+        box += `
+        <div class="product-card" id='${i.id}'>
+            <img src="${i.image}">
+            <div>
+                <h2 class="product-name">${i.title}</h2>
+                <p class="product-category">${i.category}</p>
+                <p class="price">${i.price}</p>
+                <p class="product-stars">${i.rating.rate}</p>
+            </div>
+            <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+        </div> `
+    }
+    productsContainer.innerHTML=box;
+}}
+
+search.addEventListener('input',()=>{
+    searchProduct(search.value);
+})

@@ -184,6 +184,7 @@ footer .container .prim {
     background-color: #F5F7F9;
     border-style: none;
     margin-top: 70px;
+  
 }
 .products_categories p {
     margin-right: 130px;
@@ -230,6 +231,7 @@ footer .container .prim {
     display: flex;
     flex-direction: column;
     position: relative;
+
 }
 
 .product-card:hover {
@@ -255,7 +257,7 @@ footer .container .prim {
     text-align: left;
 }
 
-.product-card .price {
+.price {
     color: #e44d26;
     font-size: 18px;
     margin-top: 5px;

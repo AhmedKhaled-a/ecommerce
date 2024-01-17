@@ -1,0 +1,128 @@
+/* 
+---------------------------------------------
+Small Devices
+--------------------------------------------- 
+*/
+body {
+    background-color: #EEE;
+}
+.product-container,
+.product-container .product-card  {
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.product-container .product-card .cartBtn{
+    margin: 0 0 15px 15px;
+}
+.product-container .product-card img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.product-container .product-card div{
+    text-align: start;
+    padding: 0px 15px;
+    margin-bottom: 25px;
+}
+
+.product-container .product-card .product-name {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-container .product-card .price {
+    font-size: 2rem;
+    color: #333333;
+}
+
+.product-container .product-card .desc {
+    text-align: justify;
+    list-style: 1.5;
+    margin-top: 15px;
+}
+
+.product-container .product-card  .price-txt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.product-container .product-card p:first-of-type {
+    margin-right: 20px;
+    font-size: 1.3rem;
+}
+
+.product-container .product-card  .price-txt
+.product-container .product-card .product-stars {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.product-container .product-card .product-stars i {
+    color: orange;
+    font-size: 1.5rem;
+}
+
+.product-container .product-card .product-stars i:first-of-type {
+    margin-left: 5px;
+}
+.product-container .product-card .cartBtn {
+    display: block;
+    position: inherit;
+    width: 150px;
+    background-color: #0084d6;
+    color: #FFF;
+    font-weight: bold;
+    padding: 0px px;
+    border-radius: 0;
+    transition: 0.3s;
+}
+.product-container .product-card .cartBtn:hover {
+    background-color: #05578a;
+}
+.product-container .product-card .cartBtn:hover::before {
+    content: '';
+    background-color: transparent;
+}
+
+/* 
+---------------------------------------------
+Meduim Devices
+--------------------------------------------- 
+*/
+@media (min-width: 768px) {
+    .product-container.p-container .product-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
+    }
+    .product-container .product-card img {
+        max-width: 45%;
+        margin-right: 30px;
+    }
+}
+
+/* 
+---------------------------------------------
+Large Devices
+--------------------------------------------- 
+*/
+@media (min-width: 992px) {
+    .product-container.p-container {
+        flex-direction: row;
+    }
+    .product-container.p-container .product-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .product-container.p-container .img-container img {
+        height: 700px;
+    }
+    .product-container .product-card div {
+        width: calc((100%/3) - 25px);
+    }
+}

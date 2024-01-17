@@ -5,6 +5,7 @@ html, body , * {
     box-sizing: border-box;
 }
 main {
+    font-size: 1.6vw;
     width: 100%;
 }
 #imgCont {
