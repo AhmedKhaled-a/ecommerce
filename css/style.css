@@ -208,13 +208,13 @@ html {
 NavBar Section
 ---------------------------------------------
 */
-/* header {
+header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-} */
+}
 nav {
   display: flex;
   align-items: center;

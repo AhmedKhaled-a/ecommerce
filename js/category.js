@@ -56,7 +56,7 @@ async function getAllProducts (minPrice,maxPrice) {
                             <img src="${i.image}" alt="" class="w-100">
                         </div>
                         <div class="p-2">
-                            <h5 class="product-name long-text">${i.title}</h5>
+                            <h2 class="product-name long-text">${i.title}</h2>
                             <p class="product-category text-muted">${i.category}</p>
                             <p class="price fw-semibold">$${i.price}</p>
                             <p class="product-stars">${i.rating.rate}</p>
@@ -82,7 +82,7 @@ async function getCategory (category) {
                             <img src="${i.image}" alt="" class="w-100">
                         </div>
                         <div class="p-2">
-                            <h5 class="product-name long-text">${i.title}</h5>
+                            <h2 class="product-name long-text">${i.title}</h2>
                             <p class="product-category text-muted">${i.category}</p>
                             <p class="price fw-semibold">$${i.price}</p>
                             <p class="product-stars">${i.rating.rate}</p>
@@ -111,7 +111,7 @@ async function searchProduct (match) {
             <img src="${i.image}" alt="" class="w-100">
         </div>
         <div class="p-2">
-            <h5 class="product-name">${i.title}</h5>
+            <h2 class="product-name">${i.title}</h2>
             <p class="product-category text-muted">${i.category}</p>
             <p class="price fw-semibold">$${i.price}</p>
             <p class="product-stars">${i.rating.rate}</p>
