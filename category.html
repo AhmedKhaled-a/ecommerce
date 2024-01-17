@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/category.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<!-- SIDEBAR -->
-<section class="sidebar closed">
-    <header>
-        <div class="image-text">
-            <span class="image">  
-                <img src="imgs/logo.png" alt="">
-            </span>
+    <!-- SIDEBAR -->
+    <section class="sidebar closed">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="imgs/logo.png" alt="">
+                </span>
 
-            <div class="text header-text">
-                <span>ShoppingCart</span>
+                <div class="text header-text">
+                    <span>ShoppingCart</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
+                </div>
             </div>
-            <div>
-                <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="sidebar-items">
-        <ul class="items">
-            <!-- <li class="item">
+        <section class="sidebar-items">
+            <ul class="items">
+                <!-- <li class="item">
                 <img src="imgs/product-accessory2-300x300.jpg" alt="">
                 <div class="item-desc">
                     <span class="item-name">Anchor Bracelet - Black</span>
@@ -118,152 +121,204 @@
                     <i class="fa-regular fa-circle-xmark mx-4 fs-4"></i>
                 </div>
             </li> -->
-        </ul>
-    </section>
+            </ul>
+        </section>
 
-    <footer class="sidebar-footer">
-        <div class="price-subtotal">
-            <span>Subtotal:</span>
-            <span id="total-price">$0.00</span>
-        </div>
-        <button class="view-btn"><a href="./cart.html">VIEW CART</a></button>
-        
-    </footer>
-    </section>
-<!-- SIDEBAR END -->
+        <footer class="sidebar-footer">
+            <div class="price-subtotal">
+                <span>Subtotal:</span>
+                <span id="total-price">$0.00</span>
+            </div>
+            <button class="view-btn"><a href="./cart.html">VIEW CART</a></button>
 
-     <!-- start Nav Section -->
-     <header>
+        </footer>
+    </section>
+    <!-- SIDEBAR END -->
+
+    <!-- start Nav Section -->
+    <header>
         <nav>
             <div class="logo">
-              <a href="#">
-                <img src="imgs/logo1-free-img-140x47.png" alt="Logo" >
-              </a>
+                <a href="#">
+                    <img src="imgs/logo1-free-img-140x47.png" alt="Logo">
+                </a>
             </div>
             <ul class="nav-links">
-              <li class="home"><a href="index.html">Home</a></li>
-              <li class="store"><a href="#">Store</a></li>
-              <li class="about"><a href="about.html">About</a></li>
-              <li class="contact"><a href="contact-us.html">Contact-us</a></li>
+                <li class="home"><a href="index.html">Home</a></li>
+                <li class="store"><a href="#">Store</a></li>
+                <li class="about"><a href="about.html">About</a></li>
+                <li class="contact"><a href="contact-us.html">Contact-us</a></li>
             </ul>
             <div class="icons">
-                <i class="fa-solid fa-cart-shopping" id="cart-slider-toggle" ></i>
+                <i class="fa-solid fa-cart-shopping" id="cart-slider-toggle"></i>
                 <a href="login.html"><i class="fa-solid fa-user"></i></a>
             </div>
-          </nav>
+        </nav>
     </header>
 
-<!-- End Nav Section -->
+    <!-- End Nav Section -->
 
-    
-    
-    <table class="container-table">
-        <tr>
-            <td class="section">
-                <div class="section">
-                    <input type="search" name="search products" class="search" placeholder="Search products...">
-                    <input type="submit" class="search-1" value=">">
-                    <h2>Filter by Price</h2> 
-                    <form method="get" action="https://websitedemos.net/brandstore-02/store/">
-                        <div class="range-slider">
-                            <label for="price-range">Price Range:</label>
-                            <input type="range" id="price-range" name="price-range" min="50" max="1500" value="50" step="10">
-                            <span class="range-values">
-                                <span class="min-value">$50</span>
-                                <span class="max-value">$290</span>
+    <!-- BODY OF THE PAGE -->
+
+    <div class="container">
+        <div class="row store-row">
+            <!-- LEFT SIDE -->
+            <div class="col-md-3  left-section px-4 py-2">
+                <!-- SEARCH SECTION -->
+                <div class="search-section mb-4 text-center w-75 m-auto">
+                    <input type="search" class="search w-100 m-auto" placeholder="Search products...">
+                    <i class="fa-solid fs-5 fa-magnifying-glass search-icon"></i>
+                </div>
+                <!-- PRICE RANGE -->
+                <div class="price-range-section mb-4">
+                    <h3 class="text-center mb-3">Filter by Price</h3>
+                    <div class="slider">
+                        <div class="slider-progress"></div>
+                    </div>
+                    <div class="range-input mb-3">
+                        <input type="range" class="range-min" min="20" max="2000" step="20" value="20">
+                        <input type="range" class="range-max" min="20" max="2000" step="20" value="2000">
+                    </div>
+                    <div class="price-input d-flex fs-5 ">
+                        <div class="field d-flex align-items-center">
+                            <span>Min</span>
+                            <input type="number" value="20" class="input-min">
+                        </div>
+                        <div class="separator">-</div>
+                        <div class="field d-flex align-items-center">
+                            <span>Max</span>
+                            <input type="number" value="2000" class="input-max">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- CATEGORIES -->
+                <div class="categories-section mb-4">
+                    <h3>Categories</h3>
+                    <div class="category d-flex justify-content-between mb-1">
+                        <span class="category-name all">All</span>
+                        <span class="items-num">(7)</span>
+                    </div>
+                    <div class="category d-flex justify-content-between mb-1">
+                        <span class="category-name electronics">Electronics</span>
+                        <span class="items-num">(7)</span>
+                    </div>
+                    <div class="category d-flex justify-content-between mb-1">
+                        <span class="category-name jewelery">Jewelery</span>
+                        <span class="items-num">(27)</span>
+                    </div>
+                    <div class="category d-flex justify-content-between mb-1">
+                        <span class="category-name men">Men</span>
+                        <span class="items-num">(17)</span>
+                    </div>
+                    <div class="category d-flex justify-content-between">
+                        <span class="category-name women">Women</span>
+                        <span class="items-num">(77)</span>
+                    </div>
+
+                </div>
+                <!-- BEST SELLERS -->
+                <div class="best-sellers-section">
+                    <div class="bs-item d-flex align-items-center">
+                        <div class="bs-item-img me-3"><img class="rounded" src="imgs/product-5.jpg" alt="" width="75">
+                        </div>
+                        <div class="bs-item-info mt-2">
+                            <p class="bs-item-name mb-0">Lorem, ipsum.</p>
+                            <span class="bs-item-rate">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
                             </span>
+                            <p class="bs-item-price">$150</p>
                         </div>
-                    </form>
-                    <div>
-                        <h2>Categories</h2>
-                        <table class="products_categories">
-                            <tr>
-                                <td><p class="electronics">Electronics</p></td>
-                                <td><p class="catCounter">(7)</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="jewelery">Jewelery</p></td>
-                                <td><P class="catCounter">(14)</P></td>
-                            </tr>
-                            <tr>
-                                <td><p class="men">Men's clothing</p></td>
-                                <td><p class="catCounter">(17)</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="women">Women's clothing</p></td>
-                                <td><p class="catCounter">(17)</p></td>
-                            </tr>
-                        </table>
                     </div>
-                    <div>
-                        <div class="cat1">
-                            <h2>Our Best Sellers</h2>
-                            <table class="best-seller">
-                                <tr>
-                                    <td ><img src="imgs/product-hoodie1-300x300.jpg" alt="black-hoodie"></td>
-                                    <td>
-                                        <a style="text-decoration: none; " href="">Black Hoodie</a>
-                                        <div class="star">&#9734; &#9734; &#9734; &#9734; &#9734;</div>
-                                        <div class="price">$150.00</div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <hr>
-                            <table class="best-seller">
-                                <tr>
-                                    <td><img src="imgs/product-bag3-300x300.jpg" alt="Bag"></td>
-                                    <td>
-                                        <a style="text-decoration: none;" href="">Bright Red Bag</a>
-                                        <div class="star">&#9734; &#9734; &#9734; &#9734; &#9734;</div>
-                                        <div class="price">$100.00 – $140.00</div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <hr>
-                            <table class="best-seller">
-                                <tr>
-                                    <td><img src="imgs/product-accessory2-300x300.jpg" alt="Anchor Bracelet"></td>
-                                    <td>
-                                        <a style="text-decoration: none;" href="">Anchor Bracelet</a>
-                                        <div class="star">&#9734; &#9734; &#9734; &#9734; &#9734;</div>
-                                        <div class="price">$150.00 – $180.00</div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <hr>
-                            <table class="best-seller">
-                                <tr>
-                                    <td><img src="imgs/sports-shoe4-300x300.jpg" alt="DNK Green Shoes"></td>
-                                    <td>
-                                        <a style="text-decoration: none;" href="">DNK Green Shoes</a>
-                                        <div class="star">&#9734; &#9734; &#9734; &#9734; &#9734;</div>
-                                        <div class="price">$250.00 – $290.00</div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <hr>
-                            <table class="best-seller">
-                                <tr>
-                                    <td><img src="imgs/product-bag4-300x300.jpg" alt="bag"></td>
-                                    <td>
-                                        <a style="text-decoration: none;"  href="">Bright Gold Purse With Chain</a>
-                                        <div class="star">&#9734; &#9734; &#9734; &#9734; &#9734;</div>
-                                        <div class="price">$150.00</div>
-                                    </td>
-                                </tr>
-                            </table>
+                    <div class="bs-item d-flex align-items-center">
+                        <div class="bs-item-img me-3"><img class="rounded" src="imgs/product-1.jpg" alt="" width="75">
+                        </div>
+                        <div class="bs-item-info mt-2">
+                            <p class="bs-item-name mb-0">Lorem, ipsum.</p>
+                            <span class="bs-item-rate">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                            <p class="bs-item-price">$150</p>
+                        </div>
+                    </div>
+                    <div class="bs-item d-flex align-items-center">
+                        <div class="bs-item-img me-3"><img class="rounded" src="imgs/product-2.jpg" alt="" width="75">
+                        </div>
+                        <div class="bs-item-info mt-2">
+                            <p class="bs-item-name mb-0">Lorem, ipsum.</p>
+                            <span class="bs-item-rate">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                            <p class="bs-item-price">$150</p>
+                        </div>
+                    </div>
+                    <div class="bs-item d-flex align-items-center">
+                        <div class="bs-item-img me-3"><img class="rounded" src="imgs/product-3.jpg" alt="" width="75">
+                        </div>
+                        <div class="bs-item-info mt-2">
+                            <p class="bs-item-name mb-0">Lorem, ipsum.</p>
+                            <span class="bs-item-rate">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                            <p class="bs-item-price">$150</p>
+                        </div>
+                    </div>
+                    <div class="bs-item d-flex align-items-center">
+                        <div class="bs-item-img me-3"><img class="rounded" src="imgs/product-4.jpg" alt="" width="75">
+                        </div>
+                        <div class="bs-item-info mt-2">
+                            <p class="bs-item-name mb-0">Lorem, ipsum.</p>
+                            <span class="bs-item-rate">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                            <p class="bs-item-price">$150</p>
                         </div>
                     </div>
                 </div>
-            </td>
-            <td class="">
-                <div class="p-container"> <!-- HERE GOES THE PRODUCTS FROM API -->
-                    
+            </div>
+            <!-- RIGHT SIDE PRODUCTS' CARDS -->
+            <div class="col-md-9 bg-white p-3">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <div class="row gy-5 py-3 justify-content-center p-container">
+                    <!-- <div class="col-md-3  p-0 mx-3 rounded product-card">
+                        <div class="product-img">
+                            <img src="imgs/product-1.jpg" alt="" class="w-100">
+                        </div>
+                        <div class="p-2">
+                            <h5 class="product-name">product name</h5>
+                            <span class="product-category text-muted">accessories</span>
+                            <p class="price fw-semibold">$500</p>
+                            <p class="product-stars"></p>
+                        </div>
+                        <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+                    </div> -->
                 </div>
-                
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Start Footer -->
     <footer>
         <div class="container">
@@ -272,7 +327,7 @@
                     <img src="./imgs/logo.png" alt="Logo">
                     <h3>The best look anytime, anywhere.</h3>
                 </div>
-    
+
                 <div class="for-her">
                     <h2>For Her</h2>
                     <a href="javascript:;">Women Jeans</a>
@@ -281,7 +336,7 @@
                     <a href="javascript:;">Heels and Flats</a>
                     <a href="javascript:;">Women Accessories</a>
                 </div>
-    
+
                 <div class="for-him">
                     <h2>For Him</h2>
                     <a href="javascript:;">Men Jeans</a>
@@ -290,7 +345,7 @@
                     <a href="javascript:;">Men Accessories</a>
                     <a href="javascript:;">Men Jackets</a>
                 </div>
-    
+
                 <div class="sub">
                     <h2>Subscribe</h2>
                     <input type="email" placeholder="Your email address..." name="emailBox" id="emailBox">
@@ -299,12 +354,13 @@
             </div>
     </footer>
     <!-- End Footer -->
-    <script src="./js/script.js"></script>
-    <script src="./js/cart-index.js"></script>
-    <script src="./js/product-page.js"></script>
-    <script src="js/category.js"></script>
-    <script src="js/script.js"></script>
-    
-    </body>
-</html>
 
+    <script src="./js/script.js"></script>
+    <!-- <script src="./js/cart-index.js"></script> -->
+    <!-- <script src="./js/product-page.js"></script> -->
+    <script src="js/category.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+
+</body>
+
+</html>

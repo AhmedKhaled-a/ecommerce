@@ -139,7 +139,6 @@ html {
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 10px;
-  
 }
 .sidebar-items .item .item-desc {
   display: flex;
@@ -191,13 +190,13 @@ html {
 NavBar Section
 ---------------------------------------------
 */
-header {
+/* header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-}
+} */
 nav {
   display: flex;
   align-items: center;
@@ -410,7 +409,9 @@ Featured Products Section
   margin-bottom: 50px;
   position: relative;
 }
-
+.product-card{
+  position: relative;
+}
 #featured .container .products .product:hover .addToCart,
 .product-card:hover .addToCart {
   display: block;
