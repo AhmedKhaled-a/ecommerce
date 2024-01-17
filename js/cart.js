@@ -90,6 +90,25 @@ function init() {
     renderProducts(getLoggedInUser()); 
 }
 
+function goToCheckout() {
+    let usrID = getLoggedInUser();
+    if(userCart != null) {
+        userCart.forEach((userProducts) => {
+            // console.log(typeof(userProducts));
+            if(Number(userProducts.userId) == usrID) {
+                if(userProducts.products.length != 0) {
+                    window.location.replace('./checkout.html');
+
+                }
+                else {
+                    alert("No thing to checkout");
+                    return;
+                }
+            }
+        });
+    }
+}
+
 
 init();
 
