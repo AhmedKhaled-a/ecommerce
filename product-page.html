@@ -26,7 +26,7 @@
                 </span>
     
                 <div class="text header-text">
-                    <span>ShoppingCart</span>
+                    <span>Shopping Cart</span>
                 </div>
                 <div>
                     <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
@@ -88,7 +88,7 @@
                 <p class="product-category"></p>
                 <p class="desc"></p>
                 <div class="price-txt">
-                    <p>price:</p>
+                    <p>price: $</p>
                     <p class="price"></p>
                 </div>
                 
@@ -169,7 +169,7 @@
         title.textContent = productDetails.title;
         desc.textContent = productDetails.description;
         price.textContent = `${productDetails.price}`;
-        rate.innerHTML = productDetails.rating + `<i class="fa-solid fa-star"></i>`.repeat(Math.round(productDetails.rating));
+        rate.innerHTML =`<p>Rate:&nbsp;&nbsp;</p>` +  productDetails.rating + `<i class="fa-solid fa-star"></i>`.repeat(Math.round(productDetails.rating));
     </script>
     <script src="./js/cart-index.js"></script>
     <script src="./js/script.js"></script>
