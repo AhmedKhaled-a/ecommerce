@@ -59,13 +59,17 @@ header {
   .nav-links a:link {
     color: white;
   }
-  .icons a:link{
+  .icons a:link , .foot-icons a:link{
       color: white;
+  }
+  .foot-icons a:hover{
+    color: #ffc107;
+    transform: scale(1.4);
   }
   a:visited {
     color: inherit;
   }
-  .icons {
+  .icons,.foot-icons {
     display: flex;
     align-items: center;
     list-style: none;
@@ -74,7 +78,7 @@ header {
   .fa-solid{
     font-size: 30px;
   }
-  .icons a {
+  .icons a ,.foot-icons a{
     padding: 15px;
     transition: transform 0.5s, color 0.4s;
   }
@@ -299,7 +303,7 @@ button:hover{
         margin-top: 15px;
         padding-top: 15px;
     }
-    .icons{
+    .foot-icons{
         justify-content: center;
         font-size: 30px;
     }
@@ -309,3 +313,53 @@ button:hover{
     #links .container2 p{
         font-weight: bold;
     }
+
+
+@media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      height: 13vh;
+    }
+  
+    .nav-links {
+      margin-top: 10px;
+      justify-content: center;
+    }
+  
+    .icons {
+      margin-top: 10px;
+      justify-content: center;
+    }
+    .nav-links,
+    .icons {
+      text-align: center;
+      width: 100%;
+    }
+  
+    .nav-links li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .icons a {
+      display: block;
+      margin-bottom: 10px;
+      
+    }
+    .container{
+        min-height: 500px;
+        font-size: 15px;
+    }
+    #links p{
+        font-size: 14px;
+        text-align: center;
+    }
+    .foot-icons{
+        justify-content: center;
+        font-size: 14px;
+    }
+  }
+  
+  
