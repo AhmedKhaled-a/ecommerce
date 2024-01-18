@@ -60,3 +60,27 @@ priceInput.forEach(input => {
         } 
     })
 })
+
+if(window.location.pathname.split("/").pop() == "index.html"){
+    
+    getAllProducts ()
+    }
+    async function getAllProducts () {
+        var apiresponse = await fetch(`https://fakestoreapi.com/products`)
+        var finalResult = await apiresponse.json()
+
+        let box = '';
+        for (let i=0;i<10;i++) {
+                box += `
+                <div class="product" id="${finalResult[i].id}">
+                <img src="${finalResult[i].image}" alt="Shoes">
+                <h2>${finalResult[i].title}</h2>
+                <p class="catg">${finalResult[i].category}</p>
+                <div class="price">$${finalResult[i].price}</div>
+                <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+                `
+            }
+            document.querySelector('.p-container').innerHTML=box;
+        addProduct = document.querySelectorAll('.addToCart');
+        }
