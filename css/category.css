@@ -7,13 +7,13 @@ body {
 NavBar Section
 ---------------------------------------------
 */
-/* header {
+header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-} */
+}
 
 nav {
   display: flex;
@@ -227,7 +227,6 @@ footer .container .sub button:hover {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  cursor: pointer;
 }
 
 .search-section .search-icon:hover {
@@ -315,34 +314,40 @@ input[type="range"]::-moz-range-thumb {
   pointer-events: auto;
   border: none;
 }
-.category .category-name{
+.category{
   cursor: pointer;
 }
-.category .category-name:hover{
+.category:hover{
   color: deepskyblue;
 }
 
 /* RIGHT SIDE */
+#sorting{
+  outline: none;
+  width: 140px;
+  border: 1px solid #999999df;
+  border-radius: 5px;
+}
 
 .product-card,
 .product-card .product-img {
   overflow: hidden;
   transition: all 1s;
-  
-  
+  cursor: pointer;
 }
 
 .product-card .product-img img {
   transition: all 1s;
-  height: 250px;
+  transform: scale(.8);
+  height: 230px;
 }
 
 .product-card .product-img img:hover {
-  transform: scale(1.15);
+  transform: scale(1);
 }
 
 .product-card:hover {
-  box-shadow: 12px 12px 10px -7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 12px 12px 3px rgba(0, 0, 0, 0.1);
 }
 
 .long-text {

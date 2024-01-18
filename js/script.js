@@ -15,7 +15,7 @@ toggle2.addEventListener('click', (e) => {
 const rangeInput = document.querySelectorAll('.range-input input'),
     priceInput = document.querySelectorAll('.price-input input')
 progress = document.querySelector('.slider .slider-progress');
-let priceGap = 100;
+let priceGap = 50;
 
 
 rangeInput.forEach(input => {

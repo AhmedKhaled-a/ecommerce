@@ -20,19 +20,19 @@
                     <img src="imgs/logo.png" alt="">
                 </span>
 
-            <div class="text header-text">
-                <span>Shopping Cart</span>
+                <div class="text header-text">
+                    <span>Shopping Cart</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
+                </div>
             </div>
-            <div>
-                <i class="fa-solid fa-xmark fs-5 toggle-sidebar"></i>
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="sidebar-items">
-        <ul class="items">
-        </ul>
-    </section>
+        <section class="sidebar-items">
+            <ul class="items">
+            </ul>
+        </section>
 
         <footer class="sidebar-footer">
             <div class="price-subtotal">
@@ -47,7 +47,7 @@
 
     <!-- start Nav Section -->
     <header>
-        <nav>
+        <nav style="background-color: #175170">
             <div class="logo">
                 <a href="#">
                     <img src="imgs/logo1-free-img-140x47.png" alt="Logo">
@@ -70,10 +70,10 @@
 
     <!-- BODY OF THE PAGE -->
 
-    <div class="container">
+    <div class="container" style="margin-top: 120px !important;">
         <div class="row store-row">
             <!-- LEFT SIDE -->
-            <div class="col-md-3  left-section px-4 py-2">
+            <div class="col-md-4 col-lg-3  left-section px-4 py-2">
                 <!-- SEARCH SECTION -->
                 <div class="search-section mb-4 text-center w-75 m-auto">
                     <input type="search" class="search w-100 m-auto" placeholder="Search products...">
@@ -86,13 +86,13 @@
                         <div class="slider-progress"></div>
                     </div>
                     <div class="range-input mb-3">
-                        <input type="range" class="range-min" min="20" max="2000" step="20" value="20">
-                        <input type="range" class="range-max" min="20" max="2000" step="20" value="2000">
+                        <input type="range" class="range-min" min="10" max="2000" step="10" value="10">
+                        <input type="range" class="range-max" min="10" max="2000" step="10" value="2000">
                     </div>
                     <div class="price-input d-flex fs-5 ">
                         <div class="field d-flex align-items-center">
                             <span>Min</span>
-                            <input type="number" value="20" class="input-min">
+                            <input type="number" value="10" class="input-min">
                         </div>
                         <div class="separator">-</div>
                         <div class="field d-flex align-items-center">
@@ -105,30 +105,15 @@
                 <!-- CATEGORIES -->
                 <div class="categories-section mb-4">
                     <h3>Categories</h3>
-                    <div class="category d-flex justify-content-between mb-1">
-                        <span class="category-name all">All</span>
-                        <span class="items-num">(7)</span>
-                    </div>
-                    <div class="category d-flex justify-content-between mb-1">
-                        <span class="category-name electronics">Electronics</span>
-                        <span class="items-num">(7)</span>
-                    </div>
-                    <div class="category d-flex justify-content-between mb-1">
-                        <span class="category-name jewelery">Jewelery</span>
-                        <span class="items-num">(27)</span>
-                    </div>
-                    <div class="category d-flex justify-content-between mb-1">
-                        <span class="category-name men">Men</span>
-                        <span class="items-num">(17)</span>
-                    </div>
-                    <div class="category d-flex justify-content-between">
-                        <span class="category-name women">Women</span>
-                        <span class="items-num">(77)</span>
-                    </div>
-
+                    <p class="category all">All</p>
+                    <p class="category electronics">Electronics</p>
+                    <p class="category jewelery">Jewelery</p>
+                    <p class="category men">Men</p>
+                    <p class="category women">Women</p>
                 </div>
                 <!-- BEST SELLERS -->
                 <div class="best-sellers-section">
+                    <h5>Best Sellers</h5>
                     <div class="bs-item d-flex align-items-center">
                         <div class="bs-item-img me-3"><img class="rounded" src="imgs/product-5.jpg" alt="" width="75">
                         </div>
@@ -207,8 +192,15 @@
                 </div>
             </div>
             <!-- RIGHT SIDE PRODUCTS' CARDS -->
-            <div class="col-md-9 bg-white p-3">
-                <h2>Lorem ipsum dolor sit amet.</h2>
+            <div class="col-md-8 col-lg-9  bg-white p-3">
+                <div class="d-flex justify-content-between w-100 my-3 px-3">
+                    <h4 class="category-title ">All</h4>
+                    <select name="sorting" id="sorting" >
+                        <option class="asc" value="asc" selected>asc</option>
+                        <option class="desc" value="desc">desc</option>
+                    </select>
+                </div>
+                
                 <div class="row gy-5 py-3 justify-content-center p-container">
                     <!-- <div class="col-md-3  p-0 mx-3 rounded product-card">
                         <div class="product-img">

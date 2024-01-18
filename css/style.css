@@ -249,7 +249,7 @@ nav a {
   transition: transform 0.5s, color 0.4s;
 }
 .nav-links li a:hover {
-  color: #ffc107;
+  color: deepskyblue;
   transform: scale(1.4);
 }
 .nav-links a:link {
@@ -278,7 +278,7 @@ nav a:visited {
 }
 
 .icons i:hover {
-  color: #ffc107;
+  color: deepskyblue;
   transform: scale(1.4);
 }
 
@@ -304,7 +304,7 @@ Hero Section
 */
 
 #hero {
-  height: 55vh;
+  height: 100vh;
   background: var(--overlay-color) url("../imgs/home-new-bg-free-img.jpg")
     no-repeat center center/cover;
   background-blend-mode: overlay;
@@ -450,6 +450,7 @@ Featured Products Section
 #featured .container .products .product:hover .addToCart,
 .product-card:hover .addToCart {
   display: block;
+
 }
 
 #featured .container .products .product img {
@@ -457,22 +458,6 @@ Featured Products Section
   margin-bottom: 10px;
 }
 
-/* #featured .container .products .product:hover::after {
-  font-family: "FontAwesome";
-  content: "\f290";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 17px;
-  right: 18px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0px 1px 3px 0px;
-  cursor: pointer;
-} */
 
 #featured .container .products .product .addToCart,
 .product-card .addToCart {
@@ -502,8 +487,7 @@ Featured Products Section
   position: absolute;
   left: -64px;
   top: 5px;
-  width: 172%;
-  height: 33%;
+  width: 200%;
   font-size: 9px;
   background-color: #000;
   color: #fff;
@@ -1041,7 +1025,7 @@ Extra Large Devices
     --------------------------------------------- 
     */
   #hero {
-    height: 88vh;
+    height: 100vh;
     background-attachment: fixed;
   }
   #hero .container .main-txt {

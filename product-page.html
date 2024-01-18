@@ -88,7 +88,7 @@
                 <p class="product-category"></p>
                 <p class="desc"></p>
                 <div class="price-txt">
-                    <p>price: $</p>
+                    <p>price:</p>
                     <p class="price"></p>
                 </div>
                 
@@ -168,7 +168,7 @@
         img.src = productDetails.image;
         title.textContent = productDetails.title;
         desc.textContent = productDetails.description;
-        price.textContent = `${productDetails.price}`;
+        price.textContent = `$${productDetails.price}`;
         rate.innerHTML =`<p>Rate:&nbsp;&nbsp;</p>` +  productDetails.rating + `<i class="fa-solid fa-star"></i>`.repeat(Math.round(productDetails.rating));
     </script>
     <script src="./js/cart-index.js"></script>

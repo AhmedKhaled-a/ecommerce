@@ -7,43 +7,68 @@ let Jewelery = document.querySelector('.jewelery');
 let Men =document.querySelector('.men');
 let Women= document.querySelector('.women');
 let search=document.querySelector('.search');
-getAllProducts(minPrice.value,maxPrice.value);
+let categoryTitle = document.querySelector('.category-title');
+let sortingSelect = document.querySelector('#sorting');
+
+
+getAllProducts(minPrice.value,maxPrice.value,sortingSelect.value);
+
+sortingSelect.addEventListener('input',()=>{
+    if(categoryTitle.innerHTML == "All"){
+        getAllProducts(minPrice.value,maxPrice.value,sortingSelect.value)
+    }else{
+        getCategory(minPrice.value,maxPrice.value,categoryTitle.innerHTML.toLowerCase(),sortingSelect.value)
+    }
+})
 
 minPrice.addEventListener('change',()=>{
-    console.log("changing");
     min =  minPrice.value;
     max =  maxPrice.value;
-    getAllProducts(min,max)
+    if(categoryTitle.innerHTML == "All"){
+        getAllProducts(min,max,sortingSelect.value)
+    }else{
+        getCategory(min,max,categoryTitle.innerHTML.toLowerCase(),sortingSelect.value)
+    }
+    
 })
 maxPrice.addEventListener('change',()=>{
-    console.log("changing");
     min =  minPrice.value;
     max =  maxPrice.value;
-    getAllProducts(min,max)
+    if(categoryTitle.innerHTML == "All"){
+        getAllProducts(min,max,sortingSelect.value)
+    }else{
+        getCategory(min,max,categoryTitle.innerHTML.toLowerCase(),sortingSelect.value)
+    }
 })
 
 all.addEventListener('click',()=>{
-    getAllProducts(minPrice.value,maxPrice.value);
+    categoryTitle.innerHTML = "All";
+    getAllProducts(minPrice.value,maxPrice.value,sortingSelect.value);
 })
 
 Electronics.addEventListener('click',()=>{
-    getCategory ('electronics');
+    categoryTitle.innerHTML = "Electronics";
+    getCategory (minPrice.value,maxPrice.value,'electronics',sortingSelect.value);
 })
 
 Jewelery.addEventListener('click',()=>{
-getCategory('jewelery');
+    categoryTitle.innerHTML = "Jewelery";
+getCategory(minPrice.value,maxPrice.value,'jewelery',sortingSelect.value);
 })
 
 Men.addEventListener('click',()=>{
-    getCategory("men's clothing");
+    categoryTitle.innerHTML = "Men's clothing";
+    getCategory(minPrice.value,maxPrice.value,"men's clothing",sortingSelect.value);
 })
 
 Women.addEventListener('click',()=>{
-    getCategory("women's clothing");
+    categoryTitle.innerHTML = "Women's clothing";
+    getCategory(minPrice.value,maxPrice.value,"women's clothing",sortingSelect.value);
 })
 
-async function getAllProducts (minPrice,maxPrice) {
-    var apiresponse = await fetch('https://fakestoreapi.com/products')
+
+async function getAllProducts (minPrice,maxPrice,sorting) {
+    var apiresponse = await fetch(`https://fakestoreapi.com/products?sort=${sorting}`)
     var finalResult = await apiresponse.json()
     // console.log(finalResult[0]);
     let box = '';
@@ -57,9 +82,9 @@ async function getAllProducts (minPrice,maxPrice) {
                         </div>
                         <div class="p-2">
                             <h2 class="product-name long-text">${i.title}</h2>
-                            <p class="product-category text-muted">${i.category}</p>
-                            <p class="price fw-semibold">$${i.price}</p>
-                            <p class="product-stars">${i.rating.rate}</p>
+                            <p class="product-category text-muted m-0">${i.category}</p>
+                            <p class="price fw-semibold m-0">$${i.price}</p>
+                            <p class="product-stars"><i class="fa-solid fa-star fs-6 me-1"></i>${i.rating.rate}</p>
                         </div>
                         <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
             </div>
@@ -70,26 +95,29 @@ async function getAllProducts (minPrice,maxPrice) {
     addProduct = document.querySelectorAll('.addToCart');
 }
 
-async function getCategory (category) {
-    var apiresponse = await fetch(`https://fakestoreapi.com/products/category/${category}`)
+async function getCategory (minPrice,maxPrice,category,sorting) {
+    var apiresponse = await fetch(`https://fakestoreapi.com/products/category/${category}?sort=${sorting}`)
     var finalResult = await apiresponse.json()
     // console.log(finalResult[0]);
     let box = '';
     for (const i of finalResult) {
-        box += `
-        <div class="col-md-3  p-0 mx-3 rounded product-card" id='${i.id}'>
-                        <div class="product-img">
-                            <img src="${i.image}" alt="" class="w-100">
-                        </div>
-                        <div class="p-2">
-                            <h2 class="product-name long-text">${i.title}</h2>
-                            <p class="product-category text-muted">${i.category}</p>
-                            <p class="price fw-semibold">$${i.price}</p>
-                            <p class="product-stars">${i.rating.rate}</p>
-                        </div>
-                        <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
-            </div>
-            `
+        if(i.price >= minPrice && i.price < maxPrice){
+            box += `
+            <div class="col-md-3  p-0 mx-3 rounded product-card" id='${i.id}'>
+                            <div class="product-img">
+                                <img src="${i.image}" alt="" class="w-100">
+                            </div>
+                            <div class="p-2">
+                                <h2 class="product-name long-text">${i.title}</h2>
+                                <p class="product-category text-muted m-0">${i.category}</p>
+                                <p class="price fw-semibold m-0">$${i.price}</p>
+                                <p class="product-stars">${i.rating.rate}</p>
+                            </div>
+                            <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>
+                </div>
+                `
+        }
+       
     }
     productsContainer.innerHTML=box;
     document.querySelectorAll('.addToCart');
@@ -112,8 +140,8 @@ async function searchProduct (match) {
         </div>
         <div class="p-2">
             <h2 class="product-name">${i.title}</h2>
-            <p class="product-category text-muted">${i.category}</p>
-            <p class="price fw-semibold">$${i.price}</p>
+            <p class="product-category text-muted m-0">${i.category}</p>
+            <p class="price fw-semibold m-0">$${i.price}</p>
             <p class="product-stars">${i.rating.rate}</p>
         </div>
         <button class="addToCart"><i class="fa-solid fa-bag-shopping"></i></button>

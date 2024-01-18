@@ -22,7 +22,7 @@ async function getProductPage(event) {
     if (selectors.some(selector => event.target.matches(selector) && !event.target.matches('.addToCart'))) {
         productId = event.target.parentElement.parentElement.id;
     } else if (event.target.matches('img')) {
-        productId = event.target.parentElement.id;
+        productId = event.target.parentElement.parentElement.id;
     } else if (event.target.matches('.product-card')) {
         productId = event.target.id;
     }

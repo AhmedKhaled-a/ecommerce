@@ -123,7 +123,7 @@ function addToCart(product) {
         let pId = product.id;
         let pName = product.querySelector('h2').textContent;
         let pImg = product.querySelector('img').src;
-        let pPrice = product.querySelector('.price').textContent; // price without $ sign .slice(1)
+        let pPrice = product.querySelector('.price').textContent.slice(1); // price without $ sign .slice(1)
         let pQuantinty = 1
 
         let productObj = {
@@ -189,12 +189,17 @@ function addToCart(product) {
  * @see {@link addToCart} - The function that adds a product to the user's cart and updates the local storage and the DOM.
  */
 allProductsContainer.addEventListener('click', function(e) {
-    if (e.target.matches('.fa-solid.fa-bag-shopping')) {
-        let product = e.target.parentElement.parentElement;
-        addToCart(product);
-    } else if (e.target.matches('.addToCart')) {
-        let product = e.target.parentElement;
-        addToCart(product);
+    if(activeUser){
+        if (e.target.matches('.fa-solid.fa-bag-shopping')) {
+            let product = e.target.parentElement.parentElement;
+            addToCart(product);
+        } else if (e.target.matches('.addToCart')) {
+            let product = e.target.parentElement;
+            addToCart(product);
+        }
+    }else{
+        alert('please login');
+        location.assign('../login.html')
     }
 })
 
