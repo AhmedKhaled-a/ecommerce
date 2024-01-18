@@ -16,10 +16,10 @@ Ecommerce project that enables customers to create accounts, explore products, a
 
 
 ### Contributers
-* AhmedKhaled-a
-* AhmedMeligy
-* mahmouddwidar
-* Ahmed-Khalil-96
-* Ahmad-Mohamad-Ibrahim
+* Ahmed Khaled
+* Ahmed Meligy
+* Mahmoud Dwidar
+* Ahmed Khalil
+* Ahmad Mohamad Ibrahim
 
 
