@@ -355,3 +355,6 @@ input[type="range"]::-moz-range-thumb {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.product-stars i {
+  color: gold;
+}
