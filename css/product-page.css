@@ -3,17 +3,28 @@
 Small Devices
 --------------------------------------------- 
 */
-body {
-    background-color: #EEE;
+
+nav {
+    background-color: #175170;
 }
+
+.product-container {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .product-container,
 .product-container .product-card  {
     margin-top: 100px;
     margin-bottom: 30px;
 }
+
 .product-container .product-card .cartBtn{
     margin: 0 0 15px 15px;
 }
+
 .product-container .product-card img {
     max-width: 100%;
     margin-bottom: 20px;

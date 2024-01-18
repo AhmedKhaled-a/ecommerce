@@ -395,6 +395,21 @@ Cards Section
   padding: 120px 20px 35px 20px;
   margin-top: 20px;
   color: #fff;
+  transition: .5s;
+}
+
+#cards .container .card:hover {
+  box-shadow: 0px 0px 10px 0px #000;;
+  animation-name: zoom;
+  animation-duration: .7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+  from {background-size: 130%;}
+  to {background-size: 135%;}
 }
 
 #cards .container .card h3 {
@@ -446,6 +461,7 @@ Featured Products Section
   overflow: hidden;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 #featured .container .products .product:hover{
   box-shadow: 0px 12px 12px 3px rgba(0, 0, 0, 0.1);

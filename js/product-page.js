@@ -19,12 +19,20 @@ async function getProductPage(event) {
     let selectors = ['.product-name', '.product-category', '.price', '.product-stars']
     let productId;
 
-    if (selectors.some(selector => event.target.matches(selector) && !event.target.matches('.addToCart'))) {
-        productId = event.target.parentElement.parentElement.id;
-    } else if (event.target.matches('img')) {
-        productId = event.target.parentElement.parentElement.id;
-    } else if (event.target.matches('.product-card')) {
-        productId = event.target.id;
+    if(window.location.pathname.split("/").pop() == 'category.html') {
+        if (selectors.some(selector => event.target.matches(selector) && !event.target.matches('.addToCart'))) {
+            productId = event.target.parentElement.parentElement.id;
+        } else if (event.target.matches('img')) {
+            productId = event.target.parentElement.parentElement.id;
+        } else if (event.target.matches('.product-card')) {
+            productId = event.target.id;
+        }
+    } else {
+        if (!event.target.matches('.addToCart')) {
+            productId = event.target.parentElement.id;
+        } else if (event.target.matches('.product')) {
+            productId = event.target.id;
+        }
     }
 
     // Get Product Details
