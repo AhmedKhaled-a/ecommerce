@@ -197,7 +197,7 @@ allProductsContainer.addEventListener('click', function(e) {
             let product = e.target.parentElement;
             addToCart(product);
         }
-    }else{
+    }else if (e.target.matches('.addToCart') || e.target.matches('.fa-solid.fa-bag-shopping')){
         alert('please login');
         location.assign('../login.html')
     }
