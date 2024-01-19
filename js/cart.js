@@ -62,7 +62,7 @@ function renderProducts(usrID) {
                     quantityInput.addEventListener("change", (e) => updateProduct(e,usrID));
                     quantityInput.setAttribute("type" , "number");
                     quantityInput.setAttribute("min" , "1");
-                    quantityInput.setAttribute("max" , "10");
+                    quantityInput.setAttribute("max" , "20");
 
                     quantityInput.setAttribute("value" , productItem.productQuantity);
                     quantityCol.appendChild(quantityInput);
