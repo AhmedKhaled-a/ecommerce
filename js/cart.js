@@ -76,7 +76,7 @@ function renderProducts(usrID) {
                     // the most recent (last in storage) is first in list
                     tableBody.insertAdjacentElement("afterbegin" , productRow);
                 });
-                totalCalculated.innerText = total.toFixed(2);
+                totalCalculated.innerText = " $" + total.toFixed(2);
                 // console.log(total);
             }
             return;

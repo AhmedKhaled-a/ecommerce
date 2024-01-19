@@ -63,7 +63,7 @@ function renderCheckoutProducts() {
                     checkoutCartHeader.insertAdjacentElement("afterend", productParEl);
 
                 });
-                totalCalculated.innerText = total.toFixed(2);
+                totalCalculated.innerText = "$" + total.toFixed(2);
                 numberOfProductsEl.innerText = numberOfProducts;
                 // console.log(total);
             }

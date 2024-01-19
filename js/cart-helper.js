@@ -83,7 +83,7 @@ function updateTotalPrice() {
         total += Number(subTotalE.innerText);
     });
 
-    totalEle.innerHTML = total.toFixed(2);
+    totalEle.innerHTML = " $" + total.toFixed(2);
 
 }
 
