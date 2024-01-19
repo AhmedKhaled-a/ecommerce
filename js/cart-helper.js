@@ -21,11 +21,9 @@ function updateProduct(e, usrID) {
             // update value
 
             userProducts.products.every((product) => {
-                console.log(product);
                 if(productId == product.productId) {
                     product.productQuantity = val;
                     price = product.productPrice;
-                    // console.log(price);
                     return false; // break
                 }
                 else {
@@ -41,7 +39,7 @@ function updateProduct(e, usrID) {
     // update subtotal and total
 
     // round to two decimal points
-    currentSubTotal.innerHTML = (val * price).toFixed(2);;
+    currentSubTotal.innerHTML = (val * price).toFixed(2);
     updateTotalPrice();
 }
 
@@ -85,7 +83,7 @@ function updateTotalPrice() {
         total += Number(subTotalE.innerText);
     });
 
-    totalEle.innerHTML = total;
+    totalEle.innerHTML = total.toFixed(2);
 
 }
 

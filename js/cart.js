@@ -23,7 +23,7 @@ function renderProducts(usrID) {
                 userProducts.products.forEach((productItem) => {
                     // console.log(productItem);
                     // let corespondingProduct = gAllProducts[productItem.productID - 1];
-                    let price = productItem.productPrice;
+                    let price = Number(productItem.productPrice);
                     // tr
                     productRow = document.createElement("tr");
                     // title
