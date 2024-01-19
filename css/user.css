@@ -53,7 +53,7 @@ header {
     transition: transform 0.5s, color 0.4s;
   }
   .nav-links li a:hover {
-    color: #ffc107;
+    color: deepskyblue;
     transform: scale(1.4);
   }
   .nav-links a:link {
@@ -63,7 +63,7 @@ header {
       color: white;
   }
   .foot-icons a:hover{
-    color: #ffc107;
+    color: deepskyblue;
     transform: scale(1.4);
   }
   a:visited {
