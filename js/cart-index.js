@@ -1,7 +1,8 @@
 let allProductsContainer = document.querySelector('.p-container');
 let ul = document.querySelector('.items');
 let activeUser = JSON.parse(localStorage.getItem('loggedInUser')); // logged in user's data
-let userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];
+let userCart;
+if (activeUser) {userCart = JSON.parse(localStorage.getItem('userCart')) || [{ 'userId': activeUser.userId, 'products': [] }];}
 let totalQuantity = 0;
 let totalPrice = 0;
 
