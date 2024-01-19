@@ -12,7 +12,7 @@ Ecommerce project that enables customers to create accounts, explore products, a
 
 
 ## Demo video
-
+https://drive.google.com/file/d/1QUzg4HtQK6E8Zex-3uvYUAzUr-EIql-Z/view?usp=sharing
 
 
 ### Contributers
